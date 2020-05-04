@@ -11,6 +11,7 @@ export default function Menu(){
         prevState => prevState === "display_off" ?  "display_in" : 'display_off'
       )
     }
+
      const burger_menu = () => { return ( 
         <>
           <button onClick={setPermissionOnClick} className="burger" > MENU </button>
@@ -32,7 +33,7 @@ export default function Menu(){
         <li><Link to="/kontakt" >KONTAKT</Link></li>
       </ul>)
     }
-    
+
     return( 
        window.innerWidth > 700 ? classic_menu() : burger_menu()
         )
