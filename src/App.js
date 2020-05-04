@@ -19,7 +19,7 @@ function App() {
 
    <div className='container'>
     <Switch>
-        <Route path="/home"> <Home/> </Route>
+        <Route exact path="/"> <Home/> </Route>
         <Route path="/oferta"> <Oferta/> </Route>
         <Route path="/about"> <About/> </Route>
         <Route path="/kontakt"> <Kontakt/> </Route>

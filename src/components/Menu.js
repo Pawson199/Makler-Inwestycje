@@ -16,7 +16,7 @@ export default function Menu(){
         <>
           <button onClick={setPermissionOnClick} className="burger" > MENU </button>
           <ul onClick={setPermissionOnClick} className={`${permission} burgerek`}>
-            <li><Link to="/home" >HOME</Link></li>
+            <li><Link to="/" >HOME</Link></li>
             <li><Link to="/oferta" >OFERTY</Link></li>
             <li><Link to="/about" >O NAS</Link></li>
             <li><Link to="/kontakt" >KONTAKT</Link></li>
@@ -27,7 +27,7 @@ export default function Menu(){
     
      const classic_menu = () => { return ( 
       <ul>
-        <li><Link to="/home" >HOME</Link></li>
+        <li><Link to="/" >HOME</Link></li>
         <li><Link to="/oferta" >OFERTY</Link></li>
         <li><Link to="/about" >O NAS</Link></li>
         <li><Link to="/kontakt" >KONTAKT</Link></li>
