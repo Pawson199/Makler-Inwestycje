@@ -1,0 +1,52 @@
+@import './queries';
+
+html{
+    @include display-flex(column, center)
+}
+
+body{
+    width: 95%;
+    .menu{
+        max-width: 95%;
+        min-height: 15vh;
+        margin: 0 auto 0 auto;
+        padding: 0;
+        @include display-flex(row, space-between);
+        font-family: 'Montserrat', sans-serif;
+
+            img{
+                width: 10em;
+                height: auto; 
+                padding-left: 1em;
+            
+            }
+
+            ul{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: 30em;
+    
+                    li{
+                        min-width: 25%;
+                        list-style: none;
+                            a{
+                                text-decoration: none;
+                                color: #666766;
+                            }
+                    }
+            }
+            @import './burger';
+    }
+    .container{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+
+
