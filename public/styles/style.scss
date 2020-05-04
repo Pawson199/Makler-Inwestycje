@@ -18,13 +18,9 @@ body{
                 width: 10em;
                 height: auto; 
                 padding-left: 1em;
-            
             }
-
             ul{
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include display-flex(row, center);
                 min-width: 30em;
     
                     li{

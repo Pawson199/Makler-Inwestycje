@@ -1,7 +1,7 @@
  
 .burgerek{
     background-color: black;
-    transition: all .7s linear;
+    transition: all .4s linear;
     min-width : 50%;
     height: 100vh;
     display: flex;
@@ -20,7 +20,7 @@
 
 .display_off{
     position: fixed;
-    left: -999px;
+    left: -55%;
     top: 0;
 }
 
