@@ -1,8 +1,8 @@
 @import './queries';
 
 html{
-    @include display-flex(column, center);
     font-family: 'Montserrat', sans-serif;
+    height: 100%;
 }
 
 body{
@@ -10,14 +10,14 @@ body{
     margin: 0;
     .menu{
         max-width: 95%;
-        min-height: 15vh;
+        min-height: 6em;
         margin: 0 auto 0 auto;
         padding: 0;
         @include display-flex(row, space-between);
             img{
                 width: 10em;
                 height: auto; 
-                padding-left: 1em;
+                padding-left: 2em;
             }
             ul{
                 @include display-flex(row, center);

@@ -1,15 +1,7 @@
 @import './queries';
 
-.home_intro{
-    width: 100%;
-   height: 40em;
-    background-color:rgba(0,0,0,0);
-    color: white;
-    position: relative;
-    @include  display-flex(row, center)
-}
-
-.home_intro::after{
+.home_desc::after{
+    z-index: -4;
     content: "";
     position: absolute;
     background-color: #9AC932;
@@ -19,70 +11,93 @@
 }
 
 .home_desc{
-    text-align: center;
+    height: 35em;
     z-index: 4;
-   
-    height: 100%;
-    font-size: 1em;
+    width: 100%;
     display: grid;
-    grid-template-rows: repeat(4, auto);
-        h1{
-            font-size:3.5em;
-            align-self: end;
-            justify-self: center;
-            max-width:80%;
-            margin: 0;
-        }
-        h2{
-            margin: auto;
-            font-size:1.8m;
-            align-self: center;
-            max-width: 70%;
-        }
-        button{
-            height: 60%;
-            width: 14em;
-            align-self: start;
-            justify-self: center;
-            background-color: #1C82CE;
-            color: white;
-            position: relative;
-            border: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-        button:active:after {
-            top: -4px;
-            left: -4px;
-        }
-        button::after{
-            content: "";
-            top: -2px;
-            left: -2px;
+    position: relative;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6,1fr);
+    
+        .desc_holder{
+            grid-area: 1 / 1 / 7 / 2;
+            width: 50%;
             height: 100%;
-            width: 14em;
-            align-self: start;
-            justify-self: center;
-            background-color: #4897D2;
-            position: absolute;
-            z-index: -5;
+            justify-self:left;
+            color: white;
+            padding-left: 4em;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 40% 20% 25% ;
+            z-index: -2;
         }
-
-        h3{
-            font-size:4em;
-            align-self: end;
-            justify-self: start;
-            color: #666766;
-            margin: 0;
-        }
+          h1{
+                @include font-size(3em,2em);
+                width:100%;
+                margin: 0;
+                align-self: end;
+                text-align: right;
+            }
+            h2{
+                @include font-size(1.5em,1em);
+                width:100%;
+                text-align: right; 
+              
+                margin: 0;
+            }
+            .button_holder{
+                width:100%;
+                display: flex;
+                justify-content: flex-end;
+            }
+            button{
+                width: 20em;
+                height: 4em;
+                background-color: #1C82CE;
+                color: white;
+                position: relative;
+                border: 0;
+                font-family: 'Montserrat', sans-serif;
+            }
+            button:active:after {
+                top: -4px;
+                left: -4px;
+            }
+            button::after{
+                content: "";
+                top: -2px;
+                left: -2px;
+                height: 100%;
+                width: 100%;
+                align-self: start;
+                justify-self: center;
+                background-color: #4897D2;
+                position: absolute;
+                z-index: -5;
+            }
+          
 }
 
 .home_image{
     max-width: 50%;
-    max-height: 100%;
+    min-width: 50%;
+    height: 100%;
     z-index: 3;
+    grid-area: 1 / 1 / 7 / 2;
+    justify-self: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: auto;
+    box-sizing: border-box;
 }
 
 .home_image img{
+    padding-left: 5em;
     max-width: 100%;
-    height: auto;
+    min-height: 90%;
+    box-sizing: border-box;
+    margin-right: auto;
 }
+
