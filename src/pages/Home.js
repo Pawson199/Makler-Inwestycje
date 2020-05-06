@@ -10,10 +10,11 @@ export default function Home() {
                         <h2>Zaprojektuj z nami wymarzony dom, mieszkanie, lub odbierz gotowy projekt!</h2>
                         <span className="button_holder">
                             <button className="home_intro_button" >NAPISZ DO NAS</button>  
-                        </span>   
+                        </span> 
+                        <span className="empty_sticker" ></span>  
                     </div>
                     <div className="home_image">
-                    <img src={homomom} ></img>
+                    <img className="contain" src={homomom} ></img>
                     </div>
                 </span>  
             <div>oferty</div>
