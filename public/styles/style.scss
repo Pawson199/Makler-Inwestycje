@@ -10,7 +10,7 @@ body{
     margin: 0;
     .menu{
         max-width: 95%;
-        min-height: 6em;
+        min-height: 7em;
         margin: 0 auto 0 auto;
         padding: 0;
         @include display-flex(row, space-between);
@@ -25,13 +25,14 @@ body{
                     li{
                         min-width: 25%;
                         list-style: none;
-                            a{
+                       a{
                                 text-decoration: none;
                                 color: #666766;
                             }
                     }
             }
-            @import './burger';
+                
+                @import './burger';
     }
 
     .container{

@@ -1,58 +1,77 @@
 @import './queries';
 
-.home_desc::after{
-    z-index: -4;
-    content: "";
-    position: absolute;
-    background-color: #9AC932;
-    min-width: 100%;
-    height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 75%);
-}
 
 .home_desc{
-    height: 35em;
+    height: 30em;
     z-index: 4;
     width: 100%;
-    display: grid;
     position: relative;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(6,1fr);
-    
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+
         .desc_holder{
-            grid-area: 1 / 1 / 7 / 2;
-            width: 50%;
+            position: absolute;
+            left: 0;
+            width: 40%;
             height: 100%;
-            justify-self:left;
+            z-index: 7;
             color: white;
-            padding-left: 4em;
-            box-sizing: border-box;
+            background-color: #9AC932;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 40% 20% 25% ;
-            z-index: -2;
+            grid-template-rows: repeat(7, 1fr);
+            padding-left: 1.5em;
+            box-sizing: border-box;
         }
+
+        .empty_sticker{
+            width: 100%;
+            height: 100%;
+            grid-area: 1 / 1 / 8 / 2 ;
+            position: relative;
+            z-index: -1;
+        }
+        .empty_sticker::before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            right: -98%;
+            z-index: 2;
+            clip-path: polygon(0 0, 27% 0, 7% 100%, 0 100%);
+            position: absolute;
+            background-color: #9AC932;
+        }
+           
           h1{
+                grid-area: 3 / 1 /4 / 2 ;
                 @include font-size(3em,2em);
-                width:100%;
+                width:90%;
                 margin: 0;
-                align-self: end;
-                text-align: right;
+                text-align: center;
+                justify-self: center;
             }
             h2{
-                @include font-size(1.5em,1em);
-                width:100%;
-                text-align: right; 
-              
+                grid-area: 4 / 1 / 5 / 2 ;
+                @include font-size(1.3em,1em);
+                width:90%;
+                text-align: center;
+                align-self: center;
+                justify-self: center; 
                 margin: 0;
+                padding: 1em;
+                font-family: 'Montserrat', sans-serif;
             }
             .button_holder{
-                width:100%;
+                grid-area: 5 / 1 / 6 / 2 ;
+                width:90%;
                 display: flex;
-                justify-content: flex-end;
+                align-self: center;
+                justify-content:  center;
+                justify-self: center;
             }
             button{
-                width: 20em;
+                width: 16em;
                 height: 4em;
                 background-color: #1C82CE;
                 color: white;
@@ -66,8 +85,8 @@
             }
             button::after{
                 content: "";
-                top: -2px;
-                left: -2px;
+                top: -3px;
+                left: -3px;
                 height: 100%;
                 width: 100%;
                 align-self: start;
@@ -75,29 +94,20 @@
                 background-color: #4897D2;
                 position: absolute;
                 z-index: -5;
-            }
-          
+            } 
 }
 
 .home_image{
-    max-width: 50%;
-    min-width: 50%;
+    grid-area: 1 / 2 / 2 / 3 ;
     height: 100%;
-    z-index: 3;
-    grid-area: 1 / 1 / 7 / 2;
-    justify-self: end;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: auto;
+    width: auto;
+    z-index: 1;
     box-sizing: border-box;
+    position: relative;
 }
 
+
 .home_image img{
-    padding-left: 5em;
-    max-width: 100%;
-    min-height: 90%;
-    box-sizing: border-box;
-    margin-right: auto;
+    height: 100%; width: 100%; object-fit: cover
 }
 
