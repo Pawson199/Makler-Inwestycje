@@ -6,6 +6,7 @@ import Oferta from './pages/Oferta'
 import Kontakt from './pages/Kontakt'
 import logo from './images/logo-makler.png'
 import Menu from './components/Menu'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
         <Route path="/kontakt"> <Kontakt/> </Route>
     </Switch>
    </div>
+
+   <Footer/>
 
    </>
   )

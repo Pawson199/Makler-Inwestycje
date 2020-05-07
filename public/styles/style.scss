@@ -10,7 +10,8 @@ body{
     margin: 0;
     .menu{
         max-width: 95%;
-        min-height: 7em;
+        min-height: 5em;
+        height: 15vh;
         margin: 0 auto 0 auto;
         padding: 0;
         @include display-flex(row, space-between);
@@ -42,9 +43,6 @@ body{
         @import './oferta';
         @import './home';
     }
-
 }
-
-
 
 
