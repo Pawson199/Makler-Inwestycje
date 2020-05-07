@@ -1,5 +1,5 @@
 import React from 'react'
-import homomom from '../images/home.svg'
+import homomom from '../images/Untitled2.svg'
 
 export default function Home() {
     return (
@@ -14,10 +14,11 @@ export default function Home() {
                         <span className="empty_sticker" ></span>  
                     </div>
                     <div className="home_image">
-                    <img className="contain" src={homomom} ></img>
+                        <img alt="background-city" className="contain" src={homomom} ></img>
                     </div>
                 </span>  
-            <div>oferty</div>
+                <span className="offers">oferty</span>
+                <span className="map">mapa z lokacjami</span>
         </>
     )
 }

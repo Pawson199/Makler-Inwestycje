@@ -2,10 +2,9 @@
     
     @media only screen and (max-width: 700px) {
          display: flex;
-         justify-content: center;
+         justify-content: $sec;
          align-items: center;
-         flex-direction: column;
-         
+         flex-direction: $direction; 
    }
    @media only screen and (min-width:700px) {
          display: flex;
@@ -15,7 +14,7 @@
      }
  }
 
- 
+
  @mixin font-size($font, $font2){
     @media only screen and (max-width: 900px) {
         font-size: $font2
@@ -24,3 +23,58 @@
        font-size: $font
     }
  }
+
+
+ @media only screen and (max-width: 901px) {
+    .home_desc{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+    .desc_holder{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 100%;
+        max-width: 100%;
+        text-align: center;
+        justify-self: center;
+    }
+    .empty_sticker::before{
+       display: none;
+    }
+    .home_image{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .button_holder{
+        justify-content:  center;
+    }
+
+   
+}
+
+@media only screen and (min-width: 901px) {
+    .home_desc{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 100%;  
+    }
+    .desc_holder{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 100%;
+        max-width: 100%;
+        text-align: left;
+        justify-self: right;
+    }
+    .home_image{
+        grid-area: 1 / 2 / 2 / 3 ;
+    }
+    .button_holder{
+        justify-content:  flex-start;
+    }
+    
+
+}
