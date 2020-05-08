@@ -1,25 +1,31 @@
-import React, {useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import homomom from '../images/Untitled2.svg'
 import Slider from '../components/Slider'
 
 export default function Home() {
-    
 
-    const funkcja = () => {
-        if(window.innerWidth < 1000){
-            console.log("mniejsze")
-        }
-        else{
-            console.log("wieksze")
-        }
+    function amount(){
+        if(window.innerWidth < 600 ){ return 1 }
+        else if(window.innerWidth > 600 & window.innerWidth < 1000 ){ return 2 }
+        else if(window.innerWidth > 1200){return 3}
     }
 
-    useEffect(() => {
-        window.addEventListener('resize', funkcja() )
-        return () => {
-           window.addEventListener('resize', funkcja() )
-        }
-    }, [])
+    const [slides, setslides] = useState(amount())
+
+    const funkcja = () => {
+        if(window.innerWidth < 600 ){ setslides(1) }
+        else if(window.innerWidth > 600 & window.innerWidth < 1000 ){ setslides(2) }
+        else if(window.innerWidth > 1200){setslides(3)}
+       }
+
+       console.log("dupa")
+   
+     useEffect(() => {
+       window.addEventListener('resize', funkcja )
+       return () => {
+        window.removeEventListener('resize', funkcja )
+       }
+   }, [])
 
     return (
         <>
@@ -37,7 +43,7 @@ export default function Home() {
                     </div>
                 </span>  
                 <span className="offers">
-                    <Slider/>
+                    <Slider number={slides} />
                 </span>
                 <span className="map">mapa z lokacjami</span>
         </>
