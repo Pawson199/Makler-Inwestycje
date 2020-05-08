@@ -545,9 +545,17 @@ body .container .home_image img {
 }
 
 body .container .offers {
-  height: 70vh;
+  height: 32em;
   width: 100%;
-  background-color: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .container .map {
