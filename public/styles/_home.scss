@@ -112,9 +112,11 @@
 }
 
 .offers{
-    height: 70vh;
+    height: 32em;
     width: 100%;
-    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .map{

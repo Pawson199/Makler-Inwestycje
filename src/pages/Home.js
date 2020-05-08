@@ -1,7 +1,26 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import homomom from '../images/Untitled2.svg'
+import Slider from '../components/Slider'
 
 export default function Home() {
+    
+
+    const funkcja = () => {
+        if(window.innerWidth < 1000){
+            console.log("mniejsze")
+        }
+        else{
+            console.log("wieksze")
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', funkcja() )
+        return () => {
+           window.addEventListener('resize', funkcja() )
+        }
+    }, [])
+
     return (
         <>
                 <span className="home_desc">
@@ -17,7 +36,9 @@ export default function Home() {
                         <img alt="background-city" className="contain" src={homomom} ></img>
                     </div>
                 </span>  
-                <span className="offers">oferty</span>
+                <span className="offers">
+                    <Slider/>
+                </span>
                 <span className="map">mapa z lokacjami</span>
         </>
     )
