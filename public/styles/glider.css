@@ -1,5 +1,6 @@
 .glider-contain {
-  width: 80%;
+  width: 85%;
+  max-width: 90em;
   height: 80%;
   margin: 0 auto;
   position: relative;
@@ -105,11 +106,4 @@
     background-color: rgba(156, 156, 156, 0.25);
     box-shadow: 0 0 1px rgba(255,255,255,.25);
   }
-}
-
-.dic{
-  width: 70%;
-  height: 80%;
-  background-color: yellow;
-  min-width: 6em;
 }
