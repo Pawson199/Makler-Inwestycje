@@ -11,7 +11,6 @@ export default function Menu(){
       )
     }
     
-
      const burger_menu = () => { return ( 
         <>
           <button onClick={setPermissionOnClick} className="burger" > MENU </button>
