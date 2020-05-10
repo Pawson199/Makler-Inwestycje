@@ -549,6 +549,7 @@ body .container .home_image {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  padding-top: 1em;
 }
 
 body .container .home_image img {
@@ -557,7 +558,7 @@ body .container .home_image img {
 }
 
 body .container .offers {
-  min-height: 28em;
+  min-height: 24em;
   height: auto;
   width: 100%;
   display: -webkit-box;
@@ -572,6 +573,17 @@ body .container .offers {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+}
+
+body .container .offers .offers_background {
+  position: absolute;
+  max-height: 40%;
+  width: auto;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  -webkit-transform: rotateY(160deg);
+          transform: rotateY(160deg);
 }
 
 body .container .offers .dic {
@@ -675,7 +687,7 @@ body .container .offers::before {
   position: absolute;
   -webkit-clip-path: polygon(100% 81%, 35% 100%, 100% 100%);
           clip-path: polygon(100% 81%, 35% 100%, 100% 100%);
-  z-index: -4;
+  z-index: -6;
 }
 
 body .container .map {

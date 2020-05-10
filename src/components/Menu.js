@@ -34,7 +34,7 @@ export default function Menu(){
     }
 
     return( 
-       window.innerWidth > 700 ? classic_menu() : burger_menu()
+       window.innerWidth > 900 ? classic_menu() : burger_menu()
         )
     
 }
