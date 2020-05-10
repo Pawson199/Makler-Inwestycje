@@ -1,5 +1,6 @@
 import React from 'react'
 import background_city from '../images/Untitled2.svg'
+import background_offers from '../images/home_choosing.svg'
 import Slider from '../components/Slider'
 
 export default function Home(props) {
@@ -20,6 +21,7 @@ export default function Home(props) {
                 </span>  
                 <span className="offers">
                     <Slider number={props.slides} />
+                    <img className="offers_background" src={background_offers} ></img>
                 </span>
                 <span className="map">mapa z lokacjami</span>
         </>

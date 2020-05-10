@@ -101,13 +101,14 @@
     position: relative;
     display: flex;
     align-items: flex-end;
+    padding-top: 1em;
 }
 .home_image img{
   width: 100%;
   max-width: 100%;
 }
 .offers{
-    min-height:28em;
+    min-height:24em;
     height:auto;
     width: 100%;
     display: flex;
@@ -115,6 +116,16 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
+    .offers_background{
+        position: absolute;
+        max-height: 40%;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        transform: rotateY(160deg);
+    }
 
     .dic{
         width: 88%;
@@ -186,7 +197,7 @@
     background-color: #9AC932;
     position: absolute;
     clip-path: polygon(100% 81%, 35% 100%, 100% 100%);
-    z-index: -4;
+    z-index: -6;
 }
 
 .map{
