@@ -108,8 +108,6 @@
   max-width: 100%;
 }
 .offers{
-    min-height:24em;
-    height:auto;
     width: 100%;
     display: flex;
     box-sizing: border-box;
@@ -128,10 +126,10 @@
     }
 
     .dic{
-        width: 88%;
-        max-height: 85%;
+        width: 85%;
+        height: auto;
+        max-height: 90%;
         box-sizing: border-box;
-        min-width: 6em;
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -140,7 +138,7 @@
         border:3px #3F3D56 solid;
       }
       .dic_image_container{
-        max-height: 50%;
+        max-height: 90%;
         max-width: 100%;
       }
       .dicimage{
@@ -192,17 +190,58 @@
 }
 .offers::before{
     content: "";
-    height: 100%;
-    width: 100%;
-    background-color: #9AC932;
-    position: absolute;
-    clip-path: polygon(100% 81%, 35% 100%, 100% 100%);
-    z-index: -6;
+ 
 }
 
 .map{
-    height: 70vh;
     width: 100%;
-    background-color: yellow;
+    position: relative;
+
+    .locations{
+        width: 100%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        background-color: #9AC932;
+        position: relative;
+        align-self: center;
+        z-index: 999;
+
+            & h1{
+                width: 80%;
+                text-align: center;
+                @include font-size(2.6em,2em);
+                min-width: 80%;
+            }
+
+            & p {
+                width: 80%;
+                text-align: center;
+                @include font-size(1.4em,1em);
+                margin: 0;
+            }
+
+    }
+    .locations::after{
+        content: "";
+            height: 100%;
+            width: 100%;
+            right: -98%;
+            z-index: 2;
+            clip-path: polygon(0 0, 22% 0, 7% 100%, 0 100%);
+            position: absolute;
+            background-color: #9AC932;
+    }
+
+    .leaflet-container{
+        height: 100%;
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+    }
+
 }
 

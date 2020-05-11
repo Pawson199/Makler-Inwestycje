@@ -39,11 +39,26 @@
   }
   .offers {
     padding: 0;
+    height: 60vh;
+    min-height: 30em;
   }
   .button_holder {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .map {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+    height: 60vh;
+    min-height: 40em;
+  }
+  .locations::after {
+    display: none;
   }
 }
 
@@ -86,7 +101,19 @@
             justify-content: flex-start;
   }
   .offers {
+    height: 85vh;
+    min-height: 32em;
     padding: 3em 0;
+  }
+  .map {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    height: 85vh;
+    min-height: 32em;
   }
 }
 
@@ -108,7 +135,7 @@ body .menu {
   padding: 0;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   body .menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -126,7 +153,7 @@ body .menu {
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
   body .menu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -154,7 +181,7 @@ body .menu ul {
   min-width: 30em;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   body .menu ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -172,7 +199,7 @@ body .menu ul {
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
   body .menu ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -254,7 +281,7 @@ body .menu .display_in {
   top: 0;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   body .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -272,7 +299,7 @@ body .menu .display_in {
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
   body .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -331,11 +358,26 @@ body .menu .display_in {
   }
   body .container .offers {
     padding: 0;
+    height: 60vh;
+    min-height: 30em;
   }
   body .container .button_holder {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  body .container .map {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
+    height: 60vh;
+    min-height: 40em;
+  }
+  body .container .locations::after {
+    display: none;
   }
 }
 
@@ -378,7 +420,19 @@ body .menu .display_in {
             justify-content: flex-start;
   }
   body .container .offers {
+    height: 85vh;
+    min-height: 32em;
     padding: 3em 0;
+  }
+  body .container .map {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    height: 85vh;
+    min-height: 32em;
   }
 }
 
@@ -558,8 +612,6 @@ body .container .home_image img {
 }
 
 body .container .offers {
-  min-height: 24em;
-  height: auto;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -587,11 +639,11 @@ body .container .offers .offers_background {
 }
 
 body .container .offers .dic {
-  width: 88%;
-  max-height: 85%;
+  width: 85%;
+  height: auto;
+  max-height: 90%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  min-width: 6em;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -610,7 +662,7 @@ body .container .offers .dic {
 }
 
 body .container .offers .dic_image_container {
-  max-height: 50%;
+  max-height: 90%;
   max-width: 100%;
 }
 
@@ -681,18 +733,92 @@ body .container .offers .dic_button_container button:active:after {
 
 body .container .offers::before {
   content: "";
-  height: 100%;
-  width: 100%;
-  background-color: #9AC932;
-  position: absolute;
-  -webkit-clip-path: polygon(100% 81%, 35% 100%, 100% 100%);
-          clip-path: polygon(100% 81%, 35% 100%, 100% 100%);
-  z-index: -6;
 }
 
 body .container .map {
-  height: 70vh;
   width: 100%;
-  background-color: yellow;
+  position: relative;
+}
+
+body .container .map .locations {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  background-color: #9AC932;
+  position: relative;
+  -ms-flex-item-align: center;
+      align-self: center;
+  z-index: 999;
+}
+
+body .container .map .locations h1 {
+  width: 80%;
+  text-align: center;
+  min-width: 80%;
+}
+
+@media only screen and (max-width: 900px) {
+  body .container .map .locations h1 {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .container .map .locations h1 {
+    font-size: 2.6em;
+  }
+}
+
+body .container .map .locations p {
+  width: 80%;
+  text-align: center;
+  margin: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  body .container .map .locations p {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .container .map .locations p {
+    font-size: 1.4em;
+  }
+}
+
+body .container .map .locations::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  right: -98%;
+  z-index: 2;
+  -webkit-clip-path: polygon(0 0, 22% 0, 7% 100%, 0 100%);
+          clip-path: polygon(0 0, 22% 0, 7% 100%, 0 100%);
+  position: absolute;
+  background-color: #9AC932;
+}
+
+body .container .map .leaflet-container {
+  height: 100%;
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 /*# sourceMappingURL=style.css.map */
