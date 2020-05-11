@@ -12,7 +12,7 @@ export default function Component(props) {
     <GliderComponent hasArrows={true} scrollLock={true} settings={ {slidesToShow : props.number, slidesToScroll : 1}}  >
       <div><Card className="dic" src={blizniak} description="Domy Bliźniak" /></div>
       <div><Card className="dic" src={energooszczedny} description="Domy Energooszczędne" /></div>
-      <div><Card className="dic" src={parterowy} description="Domy parterowe" /></div>
+      <div><Card className="dic" src={parterowy} description="Domy Parterowe" /></div>
       <div><Card className="dic" src={pietrowy} description="Domy Piętrowe" /></div>
     </GliderComponent>
   )

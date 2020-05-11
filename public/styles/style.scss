@@ -8,6 +8,7 @@ html{
 body{
     width: 100%;
     margin: 0;
+    position: relative;
     .menu{
         max-width: 95%;
         min-height: 5em;
@@ -42,6 +43,17 @@ body{
         @import './kontakt';
         @import './oferta';
         @import './home';
+    }
+
+    .footer{
+        min-width: 100%;
+        min-height: 2em;
+        height: 5vh;
+        @include display-flex(row, center);
+        @include font-size(0.7em, 0.5em);
+        background-color:#1C82CE ;
+        color: white;
+        margin: 0;
     }
 }
 
