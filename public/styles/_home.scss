@@ -109,10 +109,8 @@
 }
 .offers{
     width: 100%;
-    display: flex;
     box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
+    @include display-flex(row, center);
     position: relative;
 
     .offers_background{
@@ -135,7 +133,7 @@
         justify-content: space-between;
         align-items: center;
         flex-direction: column; 
-        border:3px #3F3D56 solid;
+        border:2px #3F3D56 solid;
       }
       .dic_image_container{
         max-height: 90%;
@@ -196,6 +194,7 @@
 .map{
     width: 100%;
     position: relative;
+    background-color: #1C82CE;
 
     .locations{
         width: 100%;

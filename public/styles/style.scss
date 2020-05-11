@@ -47,14 +47,20 @@ body{
 
     .footer{
         min-width: 100%;
-        min-height: 2em;
-        height: 5vh;
+        min-height: 3em;
+        height: 7vh;
         @include display-flex(row, center);
         @include font-size(0.7em, 0.5em);
-        background-color:#1C82CE ;
-        color: white;
+        color: #666766;
         margin: 0;
     }
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background:#1C82CE;
+  }
 
 
