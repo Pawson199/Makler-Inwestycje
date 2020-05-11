@@ -125,6 +125,7 @@ html {
 body {
   width: 100%;
   margin: 0;
+  position: relative;
 }
 
 body .menu {
@@ -820,5 +821,69 @@ body .container .map .leaflet-container {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
+}
+
+body .container .location_photo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+}
+
+body .footer {
+  min-width: 100%;
+  min-height: 2em;
+  height: 5vh;
+  background-color: #1C82CE;
+  color: white;
+  margin: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  body .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body .footer {
+    font-size: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .footer {
+    font-size: 0.7em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
