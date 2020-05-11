@@ -34,9 +34,7 @@
         grid-template-rows: 50% 50%;
     }
     .desc_holder{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include display-flex(row, center);
         max-height: 100%;
         max-width: 100%;
         text-align: center;
@@ -63,8 +61,8 @@
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 50% 50%;
-        height: 60vh;
-        min-height: 40em;
+        height: 50vh;
+        min-height: 32em;
     }
     .locations::after{
         display: none;
@@ -80,9 +78,7 @@
         grid-template-rows: 100%;  
     }
     .desc_holder{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include display-flex(row, center);
         max-height: 100%;
         max-width: 100%;
         text-align: left;
@@ -103,7 +99,7 @@
         display: grid;
     grid-template-columns: 40% 60% ;
     grid-template-rows: 1fr ;
-        height: 85vh;
+        height: 65vh;
         min-height: 32em;
     }
 }
