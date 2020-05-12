@@ -3,38 +3,76 @@
 .employees{
     position: relative;
     width: 95%;
+    max-width: 120em;
+    max-height: 40em;
     & div{
-        width: 100%;
-        height: 50%;
-        min-height: fit-content;
         background-color: #9AC932;
         @include display-flex( column, center );
-        color: white
+        color: white;
+        position: relative;
+
+            & img{
+                position: absolute;
+                right: 0;
+                top: -10%;
+            }
+
+            & p{
+                margin: 0;
+                height: 17%;
+                @include display-flex( column, center );
+                text-align: center;
+            }
+
+            & p:nth-child(3){
+                font-size: 1.7em;
+            }
+            & p:nth-child(5){
+                font-size: 1.7em;
+            }
+            & p:nth-child(4){
+                font-size: 1.4em;
+                color: #1C82CE;
+            }
+            & p:last-child{
+                font-size: 1.3em;
+                color: #1C82CE;
+            }
+
+            & h1{
+                margin: 0;
+                height: 30%;
+                @include display-flex( column, center );
+                text-align: center;
+                z-index: 22;
+            }
+
+
     }
 }
 
 .label{
     position: relative;
-    height: 25vh;
     width: 100%;
-    min-height: 13em;
     @include display-flex(row, center);
+    margin-bottom: 2em;
     
     .label1{
         position: absolute;
         color: #1C82CE;
         max-height: 100%;
         margin: 0;
-        @include font-size(5em, 3em);
+        @include font-size(4em, 3em);
         @include display-flex(row, center)
     }
     .label2{
-        position: absolute;
+        position: fixed;
         color: #1C82CE;
         height: 100%;
         margin: 0;
+        z-index: -21221;
         opacity: 0.25;
-        @include font-size(8em, 5em);
+        @include font-size(16em, 12em);
         @include display-flex(row, center)
     }
 }
@@ -43,26 +81,34 @@
 
 @media only screen and (max-width: 901px) {
     .employees{
-        @include display-flex(column, space-around);
-
+        @include display-flex(column, space-between);
+        height: 120vh;
         & div{
-            margin-top: 1em;
             width: 100%;
             height: 50%;
+            margin-bottom: 1em;
         }
-
+    }
+    .label{
+        height: 8vh;
+        min-height: 8em;
     }
 }
 
 @media only screen and (min-width: 901px) {
     .employees{
         @include display-flex(row, space-around);
-        height: 50vh;
+        height: 60vh;
         
         & div{
-            width: 45%;
+            width: 40%;
             height: 100%;
         }
+    }
+
+    .label{
+        height: 25vh;
+        min-height: 13em;
     }
 
 }
