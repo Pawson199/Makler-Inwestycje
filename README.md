@@ -2,5 +2,7 @@ Makler-Inwestycje SPA website with hidden cms.
 React with React Router - main,
 Glider as a external libary for slider in home page,
 Leafleet as a external libary for map in hp,
-Node for Express server
+Node & Express for server
 Mongodb as a database
+Nodemailer for contact form
+
