@@ -5,7 +5,6 @@ import Slider from '../components/Slider'
 import { Map, Marker, TileLayer } from 'react-leaflet'
 
 export default function Home(props) {
-    console.log('dupa')
     return (
         <>
                 <span className="home_desc">
