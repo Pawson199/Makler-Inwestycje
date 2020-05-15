@@ -388,7 +388,9 @@ body .container .home_desc .desc_holder {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: repeat(7, 1fr);
+  -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
