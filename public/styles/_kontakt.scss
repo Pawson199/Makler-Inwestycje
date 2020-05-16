@@ -12,6 +12,7 @@
         @include display-flex( column, center );
         color: #3F3D56;
         position: relative;
+        box-sizing: border-box;
 
             & img{
                 position: absolute;
@@ -58,6 +59,7 @@
     width: 100%;
     @include display-flex(row, center);
     margin-bottom: 2em;
+    white-space: nowrap;
     
     .label1{
         position: absolute;
@@ -65,7 +67,7 @@
         max-height: 100%;
         margin: 0;
         @include font-size(4em, 3em);
-        @include display-flex(row, center)
+        @include display-flex(row, center);
     }
     .label2{
         position: fixed;
@@ -171,6 +173,10 @@
 
     .form{
         margin-top:4em;
+        margin-bottom:4em;
+    }
+
+    .div_and_margin{
         margin-bottom:4em;
     }
 

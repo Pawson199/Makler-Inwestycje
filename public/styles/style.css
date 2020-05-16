@@ -34,7 +34,18 @@ body .menu {
 body .menu img {
   width: 10em;
   height: auto;
-  padding-left: 2em;
+}
+
+@media only screen and (max-width: 900px) {
+  body .menu img {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .menu img {
+    padding-left: 2em;
+  }
 }
 
 body .menu ul {
@@ -134,6 +145,137 @@ body .container {
           flex-direction: column;
 }
 
+body .container .about_us {
+  width: 90%;
+  max-width: 120em;
+  max-height: 40em;
+  border: 0.2em solid #9AC932;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  padding: 0 1em 0 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #3F3D56;
+  margin: 0;
+  position: relative;
+}
+
+@media only screen and (max-width: 900px) {
+  body .container .about_us {
+    font-size: 1.4em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .container .about_us {
+    font-size: 1.6em;
+  }
+}
+
+body .container .quotation {
+  position: absolute;
+  top: -0.5em;
+  right: 0;
+  font-size: 6em;
+  margin: 0;
+}
+
+body .container .partners {
+  width: 90%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(10em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5em 0 5em 0;
+}
+
+body .container .partners img {
+  max-width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body .container .services {
+  width: 90%;
+  max-width: 120em;
+  max-height: 20em;
+  border: 0.2em solid #9AC932;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  padding: 0 1em 0 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #3F3D56;
+  margin: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  body .container .services {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .container .services {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 901px) {
+  body .container .about_us {
+    height: 40vh;
+  }
+  body .container .partners {
+    height: auto;
+  }
+  body .container .services {
+    height: 20vh;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  body .container .about_us {
+    height: 50vh;
+  }
+  body .container .partners {
+    height: auto;
+  }
+  body .container .services {
+    height: 20vh;
+  }
+}
+
 body .container .employees {
   position: relative;
   width: 90%;
@@ -159,6 +301,8 @@ body .container .employees div {
           flex-direction: column;
   color: #3F3D56;
   position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body .container .employees div img {
@@ -241,6 +385,7 @@ body .container .label {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-bottom: 2em;
+  white-space: nowrap;
 }
 
 body .container .label .label1 {
@@ -451,6 +596,9 @@ body .container .form input:nth-child(4) {
   }
   body .container .form {
     margin-top: 4em;
+    margin-bottom: 4em;
+  }
+  body .container .div_and_margin {
     margin-bottom: 4em;
   }
 }
@@ -997,8 +1145,9 @@ body .footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  color: #3F3D56;
+  color: white;
   margin: 0;
+  background-color: #9AC932;
 }
 
 @media only screen and (max-width: 900px) {

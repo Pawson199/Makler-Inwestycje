@@ -59,7 +59,7 @@ export default function Kontakt() {
                 <input type="submit" value="Wyślij" />
             </form>
             
-            <span className="employees">
+            <span className="employees div_and_margin">
                 <div>
                     <h1>Godziny Pracy</h1>
                     <p>Od poniedziałku do piątku </p>

@@ -20,7 +20,7 @@ body{
             img{
                 width: 10em;
                 height: auto; 
-                padding-left: 2em;
+                @include padd(0,2em)
             }
             ul{
                 @include display-flex(row, center);
@@ -52,8 +52,9 @@ body{
         height: 7vh;
         @include display-flex(row, center);
         @include font-size(0.7em, 0.5em);
-        color: #3F3D56;
+        color: white;
         margin: 0;
+        background-color: #9AC932;
     }
 }
 

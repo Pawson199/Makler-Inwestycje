@@ -1,9 +1,45 @@
 import React from 'react'
+import leroy from '../images/loga/LM.png'
+import nobo from '../images/loga/nobo.png'
+import profit from '../images/loga/profit.png'
+import constrado from '../images/loga/constrado.png'
+import budem from '../images/loga/budemlogo.png'
 
 export default function About() {
+
+    const Service = ( props ) => {
+        return(
+            <span> <div></div><p>{props.desc}</p> </span>
+        )
+    }
+
     return (
-        <div>
-            fsdafd
+       <>
+        <label className="label">
+            <h1 className="label1" >O Firmie</h1>
+            <h1 className="label2" >O Firmie</h1>
+        </label>
+        <div className="about_us">
+            <p className="quotation">“</p>
+            Działamy na rynku Łódzkich przedsiębiorstw od 2009 roku. Zajmujemy się przede wszystkim
+            obsługą rynku nieruchomości oraz inwestycjami w grunty. Nasze usługi są
+            kierowane zarówno do klientów indywidualnych, jak i do firm.
         </div>
+        <span className="partners">
+            <img src={leroy}/>
+            <img src={nobo}/>
+            <img src={budem}/>
+            <img src={profit}/>
+            <img src={constrado}/>
+        </span>
+        <div className="services">
+          Zakres naszych usług
+        </div>
+        <Service desc="Pośrednictwo w sprzedaży, kupnie i wynajmie nieruchomości" />
+        <Service desc="Pośrednictwo w kupnie nowoczesnych domów pasywnych" />
+        <Service desc="Pośrednictwo w inwestycjach w nieruchomości" />
+        <Service desc="Profesjonalne doradztwo" />
+        <Service desc="Pośrednictwo finansowe" />
+       </>
     )
 }
