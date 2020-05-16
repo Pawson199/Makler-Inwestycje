@@ -52,18 +52,25 @@ export default function Kontakt() {
                 </div> 
             </span>
 
-            <form onSubmit={sendIt}  >
-                <label>
-                    Email:
-                    <input type="text" name="email" value={email} onChange={changeIt} />
-                </label>
-                <label>
-                    Message:
-                    <input type="text" name="message" value={message} onChange={changeIt} />
-                </label>
-                <input type="submit" value="Submit" />
+            <form onSubmit={sendIt} className="form" >
+                <h1>Napisz do nas!</h1>
+                <input type="text" placeholder="Tutaj wpisz swój e-mail, lub numer telefonu" name="email" value={email} onChange={changeIt} />
+                <textarea type="text" placeholder="Treść wiadomości" name="message" value={message} onChange={changeIt} />
+                <input type="submit" value="Wyślij" />
             </form>
             
+            <span className="employees">
+                <div>
+                    <h1>Godziny Pracy</h1>
+                    <p>Od poniedziałku do piątku </p>
+                    <p>w godzinach 8:00-17:00</p>
+                </div>
+                <div>
+                    <h1>Gdzie nas znajdziecie?</h1>
+                    <p>Nasze biuro mieści się przy ulicy</p>
+                    <p>Pomorskiej 83/85, w lokalu nr 409 A, w Łodzi</p>
+                </div> 
+            </span>
         </>
     )
 }

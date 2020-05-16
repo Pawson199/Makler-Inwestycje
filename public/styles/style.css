@@ -1,13 +1,7 @@
-
 html {
   font-family: 'Montserrat', sans-serif;
   height: 100%;
   font-size: 1rem;
-}
-
-html {
-  font-family: 'Montserrat', sans-serif;
-  height: 100%;
 }
 
 body {
@@ -22,7 +16,6 @@ body .menu {
   height: 15vh;
   margin: 0 auto 0 auto;
   padding: 0;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,7 +54,6 @@ body .menu ul {
   min-width: 30em;
 }
 
-
 body .menu ul li {
   min-width: 25%;
   list-style: none;
@@ -69,7 +61,7 @@ body .menu ul li {
 
 body .menu ul li a {
   text-decoration: none;
-  color: #666766;
+  color: #3F3D56;
 }
 
 body .menu .burgerek {
@@ -126,7 +118,6 @@ body .menu .display_in {
   top: 0;
 }
 
-
 body .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,13 +136,14 @@ body .container {
 
 body .container .employees {
   position: relative;
-  width: 95%;
+  width: 90%;
   max-width: 120em;
   max-height: 40em;
 }
 
 body .container .employees div {
-  background-color: #9AC932;
+  border: 0.2em solid #9AC932;
+  background-color: rgba(154, 201, 50, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,7 +157,7 @@ body .container .employees div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: white;
+  color: #3F3D56;
   position: relative;
 }
 
@@ -317,6 +309,90 @@ body .container .label .label2 {
   }
 }
 
+body .container .form {
+  height: 50vh;
+  width: 90%;
+  max-width: 120em;
+  max-height: 40em;
+  min-height: 28em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[10];
+      grid-template-rows: repeat(10, 1fr);
+  background-color: #9AC932;
+  color: white;
+}
+
+body .container .form h1:nth-child(1) {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 0;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2/ 1/ 3/ 2;
+  color: white;
+}
+
+body .container .form input:nth-child(2) {
+  width: 90%;
+  height: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 3/ 1/ 5/ 2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .container .form textarea:nth-child(3) {
+  width: 90%;
+  height: 100%;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 5/ 1/ 9/ 2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  resize: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .container .form input:nth-child(4) {
+  width: 20%;
+  height: 50%;
+  -ms-grid-row: 9;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 9/ 1/ 11/ 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border: 0;
+  background-color: #1C82CE;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
 @media only screen and (max-width: 901px) {
   body .container .employees {
     display: -webkit-box;
@@ -343,6 +419,9 @@ body .container .label .label2 {
     height: 8vh;
     min-height: 8em;
   }
+  body .container .form {
+    margin-bottom: 1em;
+  }
 }
 
 @media only screen and (min-width: 901px) {
@@ -350,8 +429,9 @@ body .container .label .label2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -359,16 +439,19 @@ body .container .label .label2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-
     height: 60vh;
   }
   body .container .employees div {
-    width: 40%;
+    width: 47%;
     height: 100%;
   }
   body .container .label {
     height: 25vh;
     min-height: 13em;
+  }
+  body .container .form {
+    margin-top: 4em;
+    margin-bottom: 4em;
   }
 }
 
@@ -388,7 +471,7 @@ body .container .home_desc .desc_holder {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: (1fr)[7];
       grid-template-rows: repeat(7, 1fr);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -504,7 +587,6 @@ body .container .home_desc .home_intro_button {
   border: 0;
   font-family: 'Montserrat', sans-serif;
 }
-
 
 body .container .home_desc .home_intro_button:active:after {
   top: -4px;
@@ -710,6 +792,7 @@ body .container .map .locations h1 {
   width: 80%;
   text-align: center;
   min-width: 80%;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 900px) {
@@ -727,7 +810,6 @@ body .container .map .locations h1 {
 body .container .map .locations p {
   width: 80%;
   text-align: center;
-  margin: 0;
 }
 
 @media only screen and (max-width: 900px) {
@@ -779,8 +861,8 @@ body .container .location_photo {
     display: grid;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
-    -ms-grid-rows: 50% 50%;
-        grid-template-rows: 50% 50%;
+    -ms-grid-rows: 60% 40%;
+        grid-template-rows: 60% 40%;
   }
   body .container .desc_holder {
     display: -webkit-box;
@@ -832,7 +914,7 @@ body .container .location_photo {
     -ms-grid-rows: 50% 50%;
         grid-template-rows: 50% 50%;
     height: 50vh;
-    min-height: 32em;
+    min-height: 42em;
   }
   body .container .locations::after {
     display: none;
@@ -915,7 +997,7 @@ body .footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  color: #666766;
+  color: #3F3D56;
   margin: 0;
 }
 

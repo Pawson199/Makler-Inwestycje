@@ -69,6 +69,7 @@
                 justify-self: inherit;
                 z-index: 25;
             }
+            
             .home_intro_button{
                 width: 16em;
                 height: 4em;
@@ -82,7 +83,7 @@
                 top: -4px;
                 right: -4px;
             }
-           .home_intro_button::after{
+            .home_intro_button::after{
                 content: "";
                 top: -3px;
                 right: -3px;
@@ -218,13 +219,13 @@
                 text-align: center;
                 @include font-size(2.6em,2em);
                 min-width: 80%;
+                margin-bottom: 0;
             }
 
             & p {
                 width: 80%;
                 text-align: center;
                 @include font-size(1.4em,1em);
-                margin: 0;
             }
 
     }
@@ -262,7 +263,7 @@
         min-height: 40em;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 60% 40%;
     }
     .desc_holder{
         @include display-flex(row, center);
@@ -293,7 +294,7 @@
         grid-template-columns: 100%;
         grid-template-rows: 50% 50%;
         height: 50vh;
-        min-height: 32em;
+        min-height: 42em;
     }
     .locations::after{
         display: none;

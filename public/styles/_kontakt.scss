@@ -3,13 +3,14 @@
 
 .employees{
     position: relative;
-    width: 95%;
+    width: 90%;
     max-width: 120em;
     max-height: 40em;
     & div{
-        background-color: #9AC932;
+        border: 0.2em solid #9AC932;
+        background-color:  rgba(154, 201, 50, 0.1);
         @include display-flex( column, center );
-        color: white;
+        color: #3F3D56;
         position: relative;
 
             & img{
@@ -78,6 +79,57 @@
     }
 }
 
+.form{
+    height: 50vh;
+    width: 90%;
+    max-width: 120em;
+    max-height: 40em;
+    min-height: 28em;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: repeat(10, 1fr) ;
+    background-color:#9AC932;
+    color: white;
+
+        & h1:nth-child(1){
+            align-self: center;
+            justify-self: center;
+            margin: 0;
+            grid-area: 2/ 1/ 3/ 2;
+            color: white;
+        }
+
+        & input:nth-child(2) {
+            width: 90%;
+            height: 50%;
+            align-self: center;
+            justify-self: center;
+            grid-area: 3/ 1/ 5/ 2;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        & textarea:nth-child(3) {
+            width: 90%;
+            height: 100%;
+            grid-area: 5/ 1/ 9/ 2;
+            box-sizing: border-box;
+            justify-self: center;
+            resize: none;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+        & input:nth-child(4) {
+            width: 20%;
+            height: 50%;
+            grid-area:9/ 1/ 11/ 2;
+            align-self: center;
+            justify-self: center;
+            border: 0;
+            background-color: #1C82CE;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }   
+}
 
 
 @media only screen and (max-width: 901px) {
@@ -94,15 +146,20 @@
         height: 8vh;
         min-height: 8em;
     }
+
+    .form{
+        margin-bottom:1em;
+    }
+
 }
 
 @media only screen and (min-width: 901px) {
     .employees{
-        @include display-flex(row, space-around);
+        @include display-flex(row, space-between);
         height: 60vh;
         
         & div{
-            width: 40%;
+            width: 47%;
             height: 100%;
         }
     }
@@ -110,6 +167,11 @@
     .label{
         height: 25vh;
         min-height: 13em;
+    }
+
+    .form{
+        margin-top:4em;
+        margin-bottom:4em;
     }
 
 }

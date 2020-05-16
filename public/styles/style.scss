@@ -30,7 +30,7 @@ body{
                         list-style: none;
                        a{
                                 text-decoration: none;
-                                color: #666766;
+                                color: #3F3D56;
                             }
                     }
             }
@@ -52,7 +52,7 @@ body{
         height: 7vh;
         @include display-flex(row, center);
         @include font-size(0.7em, 0.5em);
-        color: #666766;
+        color: #3F3D56;
         margin: 0;
     }
 }
