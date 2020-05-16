@@ -8,7 +8,7 @@
     max-height: 40em;
     & div{
         border: 0.2em solid #9AC932;
-        background-color:  rgba(154, 201, 50, 0.1);
+        background-color:  white;
         @include display-flex( column, center );
         color: #3F3D56;
         position: relative;
