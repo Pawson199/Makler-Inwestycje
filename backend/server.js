@@ -3,7 +3,9 @@ const cors = require('cors')
 const app = express()
 const creds = require('./config');
 var nodemailer = require('nodemailer');
-
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+require('dotenv').config();
 app.use(cors())
 app.use(express.json())
 
@@ -12,12 +14,33 @@ app.listen(4000, () => {
 })
 
 
+const uri = process.env.ATLAS_URI;
+const client = MongoClient(uri,{ useUnifiedTopology: true } )
+const dane = []
+
+ client.connect().then( 
+   async (client) => {
+  const db = await client.db("offers_1");
+  var cursor = db.collection('offers').find();
+
+   const iterateFunc =  (doc) => {
+       dane.push( doc )
+    }
+ 
+    function errorFunc(error) {
+        console.log(error);
+    }
+ 
+     cursor.forEach(iterateFunc, errorFunc);
+}, client.close() )
+
+
 
 var transport = {
   host: 's66.linuxpl.com',
   port:	587,
   auth: {
-    //dont forget to add the creds file
+    //dont forget to add creds file
   user: creds.USER,
   pass: creds.PASS
 }
@@ -32,7 +55,7 @@ var transporter = nodemailer.createTransport(transport)
 
   var mail = {
     from: "kontakt@makler-inwestycje.pl",
-    to: 'starnaw1998@interia.pl',  // Change to email address that you want to receive messages on
+    to: 'starnaw1998@interia.pl', 
     subject: 'Wiadomość kontaktowa ze strony Makler-Inwestycje',
     text: content
   }
@@ -50,3 +73,7 @@ var transporter = nodemailer.createTransport(transport)
     }
   })
 })
+
+app.get( '/data', (req,res) => {
+  res.json(dane)
+} )
