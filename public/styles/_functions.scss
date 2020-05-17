@@ -14,12 +14,3 @@
        font-size: $font
     }
  }
-
- @mixin padd($size1, $size2) {
-   @media only screen and (max-width: 900px) {
-      padding-left: $size1;
-}
-  @media only screen and (min-width:900px) {
-   padding-left: $size2;
-  }
- }

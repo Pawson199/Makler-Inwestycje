@@ -3,13 +3,11 @@
 .about_us{
     width: 90%;
     max-width: 120em;
-    max-height: 40em;
     border: 0.2em solid #9AC932;
     background-color:  white;
     @include font-size(1.6em, 1.4em);
     @include display-flex(row, center);
     text-align: center;
-    padding: 0 1em 0 1em;
     box-sizing: border-box;
     color:#3F3D56;
     margin: 0;
@@ -26,9 +24,11 @@
 
 .partners{
     width: 90%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
     grid-template-rows:1fr;
+    row-gap: 1em;
     box-sizing: border-box;
     padding: 5em 0 5em 0;
         & img{
@@ -40,38 +40,69 @@
 .services{
     width: 90%;
     max-width: 120em;
-    max-height: 20em;
     border: 0.2em solid #9AC932;
     background-color:  white;
     @include font-size(1.6em, 1.2em);
-    @include display-flex(row, center);
+    @include display-flex(column, center);
     text-align: center;
-    padding: 0 1em 0 1em;
     box-sizing: border-box;
     color:#3F3D56;
-    margin: 0;
+}
+.services:nth-last-child(1){
+    @include display-flex(column, space-between);
+    margin-bottom: 1em;
+        & button{
+            margin-top: 2.5em;
+            width: 40%;
+            height: 3em;
+            border: 0;
+            background-color: #1C82CE;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            box-shadow: 5px -5px 0 #3F3D56;
+        }
+        & button:active{
+           box-shadow: 5px -5px 0 white ;
+           padding-bottom: 5px;
+        }
+}
+
+.one_of_service{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 1fr ;
+    width: 70%;
+    margin: 1.5em;
+    & div{
+        width: 2.5em;
+        height: 2.5em;
+        background-color: #9AC932;
+        @include display-flex(row,center);
+        color: white;
+        align-self: center;
+        justify-self: center;
+    }
+    & p{ 
+        @include font-size(1.4em, 1.2em);
+        color:#3F3D56;
+        padding: 0 1em 0 1em;
+      }
 }
 
 @media only screen and (max-width: 901px) {
     .about_us{
-        height:40vh;
-    }
-    .partners{
-        height: auto;
+        padding: 2em;
     }
     .services{
-        height: 20vh;
+        padding: 1em;
     }
 }
 
 @media only screen and (min-width: 901px) {
     .about_us{
-        height: 50vh;
-    }
-    .partners{
-        height: auto;
+        padding: 3em;
     }
     .services{
-        height: 20vh;
+        padding: 2em;
     }
 }

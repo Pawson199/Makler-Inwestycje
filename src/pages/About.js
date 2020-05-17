@@ -9,7 +9,7 @@ export default function About() {
 
     const Service = ( props ) => {
         return(
-            <span> <div></div><p>{props.desc}</p> </span>
+        <span className="one_of_service" > <div>{props.number}</div><p>{props.desc}</p> </span>
         )
     }
 
@@ -35,11 +35,15 @@ export default function About() {
         <div className="services">
           Zakres naszych usług
         </div>
-        <Service desc="Pośrednictwo w sprzedaży, kupnie i wynajmie nieruchomości" />
-        <Service desc="Pośrednictwo w kupnie nowoczesnych domów pasywnych" />
-        <Service desc="Pośrednictwo w inwestycjach w nieruchomości" />
-        <Service desc="Profesjonalne doradztwo" />
-        <Service desc="Pośrednictwo finansowe" />
+        <Service number="1" desc="Pośrednictwo w sprzedaży, kupnie i wynajmie nieruchomości" />
+        <Service number="2"  desc="Pośrednictwo w kupnie nowoczesnych domów pasywnych" />
+        <Service number="3"  desc="Pośrednictwo w inwestycjach w nieruchomości" />
+        <Service number="4"  desc="Profesjonalne doradztwo" />
+        <Service number="5"  desc="Pośrednictwo finansowe" />
+        <div className="services">
+          Odwiedź też naszą galerię! 
+            <button>Klik!</button>
+        </div>
        </>
     )
 }
