@@ -26,11 +26,11 @@ export default function About() {
             kierowane zarówno do klientów indywidualnych, jak i do firm.
         </div>
         <span className="partners">
-            <img src={leroy}/>
-            <img src={nobo}/>
-            <img src={budem}/>
-            <img src={profit}/>
-            <img src={constrado}/>
+            <img alt="logo_leroy" src={leroy}/>
+            <img alt="logo_nobo"  src={nobo}/>
+            <img alt="logo_budem"  src={budem}/>
+            <img alt="logo_profit" src={profit}/>
+            <img alt="logo_constrado" src={constrado}/>
         </span>
         <div className="services">
           Zakres naszych usług

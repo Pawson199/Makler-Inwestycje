@@ -16,15 +16,16 @@ app.listen(4000, () => {
 
 const uri = process.env.ATLAS_URI;
 const client = MongoClient(uri,{ useUnifiedTopology: true } )
-const dane = []
+let dane = []
 
  client.connect().then( 
-   async (client) => {
-  const db = await client.db("offers_1");
-  var cursor = db.collection('offers').find();
+   (client) => {
+  const db = client.db("offers_1");
+  let cursor = db.collection('offers').find({});
 
-   const iterateFunc =  (doc) => {
-       dane.push( doc )
+   const iterateFunc = (doc) => {
+      dane.push(doc.arra)
+      console.log(doc)
     }
  
     function errorFunc(error) {

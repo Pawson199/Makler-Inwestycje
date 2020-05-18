@@ -3,18 +3,20 @@ import Offer from '../components/Offer'
 
 export default function Oferta() {
 
-    const [dane, setdane] = useState([])
+    const [nowy, setNowy] = useState([])
 
    useEffect( () => {
     fetch('http://localhost:4000/data')
       .then(response =>  response.json() )
-      .then(json => console.log(json))
+      .then(json => setNowy(json[0]) )
       .catch((error) => {
         console.log(error);
      }) 
-    })
+    }, [])
 
-    const oferty = dane.map( el => <Offer desc={el} /> )
+    console.log(nowy)
+
+    let oferty = nowy.map( (el,id) => <Offer key={id} desc={el.nazwa} /> )
 
     return (
         <>
