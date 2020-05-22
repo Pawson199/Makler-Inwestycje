@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Oferta from './pages/Oferta'
 import Kontakt from './pages/Kontakt'
+import Admin from './pages/Admin'
 import logo from './images/logo-makler.png'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
@@ -42,6 +43,7 @@ const change_quentity_of_slides = () => {
         <Route path="/oferta"> <Oferta/> </Route>
         <Route path="/about"> <About/> </Route>
         <Route path="/kontakt"> <Kontakt/> </Route>
+        <Route path="/admin"> <Admin/> </Route>
     </Switch>
    </div>
 

@@ -3,8 +3,8 @@ const cors = require('cors')
 const app = express()
 const creds = require('./config');
 var nodemailer = require('nodemailer');
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
+const mongoose = require('mongoose');
+
 require('dotenv').config();
 app.use(cors())
 app.use(express.json())
@@ -12,30 +12,6 @@ app.use(express.json())
 app.listen(4000, () => {
     console.log(`Server is running on port: 4000`);
 })
-
-
-const uri = process.env.ATLAS_URI;
-const client = MongoClient(uri,{ useUnifiedTopology: true } )
-let dane = []
-
- client.connect().then( 
-   (client) => {
-  const db = client.db("offers_1");
-  let cursor = db.collection('offers').find({});
-
-   const iterateFunc = (doc) => {
-      dane.push(doc.arra)
-      console.log(doc)
-    }
- 
-    function errorFunc(error) {
-        console.log(error);
-    }
- 
-     cursor.forEach(iterateFunc, errorFunc);
-}, client.close() )
-
-
 
 var transport = {
   host: 's66.linuxpl.com',
@@ -75,6 +51,14 @@ var transporter = nodemailer.createTransport(transport)
   })
 })
 
-app.get( '/data', (req,res) => {
-  res.json(dane)
-} )
+const uri = process.env.ATLAS_URI;
+
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
+  );
+  const connection = mongoose.connection;
+  connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+  })
+  
+const dataRouter = require('./routes/data')
+app.use( '/data', dataRouter )

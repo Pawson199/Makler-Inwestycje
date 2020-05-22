@@ -8,12 +8,13 @@ export default function Oferta() {
    useEffect( () => {
     fetch('http://localhost:4000/data')
       .then(response =>  response.json() )
-      .then(json => setNowy(json[0]) )
+      .then(json => console.log(json) )
       .catch((error) => {
         console.log(error);
      }) 
     }, [])
 
+    
     console.log(nowy)
 
     let oferty = nowy.map( (el,id) => <Offer key={id} desc={el.nazwa} /> )
