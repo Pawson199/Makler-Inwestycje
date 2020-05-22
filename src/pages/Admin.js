@@ -6,7 +6,6 @@ export default function Admin() {
     const [desc, setdesc] = useState('')
     const [offer_name, setoffer_name] = useState('')
 
-
     const changeImage = (e) => {
        const images = e.target.files
        const images_tab = []

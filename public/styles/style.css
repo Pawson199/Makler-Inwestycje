@@ -1229,6 +1229,7 @@ body .footer {
   color: white;
   margin: 0;
   background-color: #9AC932;
+  text-align: center;
 }
 
 @media only screen and (max-width: 900px) {

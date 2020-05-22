@@ -9,13 +9,14 @@ const uri = process.env.ATLAS_URI;
     
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    const file_path = `./folder`
+    const file_path = '../public/images'
     cb(null, file_path);
   },
   filename: function(req, file, cb) {
     cb(null, file.originalname.replace(/\s/g, '') )
   }
 });
+
   const upload = multer({ storage: storage })
 
   router.route('/').post( upload.array('avatar', 8), (req,res) => {

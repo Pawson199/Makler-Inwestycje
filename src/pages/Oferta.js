@@ -3,21 +3,21 @@ import Offer from '../components/Offer'
 
 export default function Oferta() {
 
-    const [nowy, setNowy] = useState([])
+    const [oferty, setOferty] = useState([])
 
    useEffect( () => {
     fetch('http://localhost:4000/data')
       .then(response =>  response.json() )
-      .then(json => console.log(json) )
+      .then(json => setOferty( json ) )
       .catch((error) => {
         console.log(error);
      }) 
     }, [])
 
     
-    console.log(nowy)
+    console.log(oferty)
 
-    let oferty = nowy.map( (el,id) => <Offer key={id} desc={el.nazwa} /> )
+    let oferty_map = oferty.map( (el,id) => <Offer key={id} desc={el.desc} photos={el.image} name={el.nazwa} /> )
 
     return (
         <>
@@ -25,7 +25,7 @@ export default function Oferta() {
             <h1 className="label1" >Oferty</h1>
             <h1 className="label2" >Oferty</h1>
         </label>
-        <div className="oferty">{oferty}</div>
+        <div className="oferty">{oferty_map}</div>
        </>
     )
 }
