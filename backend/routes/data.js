@@ -29,14 +29,20 @@ const storage = multer.diskStorage({
           desc
      })
      data.save()
-    res.json("Files uploaded")
+    res.json("Dodano ofertę!")
   })
-
-
 
 router.route('/').get((req, res) => {
     Data.find()
       .then(data => res.json(data))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+
+  router.route('/:offer_to_delete').delete((req, res) => {
+    Data.find({ nazwa : req.params.offer_to_delete })
+      .then(data => Data.findByIdAndDelete(data, (err, doc) => {
+        if(err || !doc ) { res.json("Taka oferta nie istnieje!")}
+        else { res.json("Oferta została usunięta") } }))
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
