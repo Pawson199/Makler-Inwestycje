@@ -40,9 +40,13 @@ router.route('/').get((req, res) => {
 
   router.route('/:offer_to_delete').delete((req, res) => {
     Data.find({ nazwa : req.params.offer_to_delete })
-      .then(data => Data.findByIdAndDelete(data, (err, doc) => {
+      .then(data => { Data.findByIdAndDelete(data, (err, doc) => {
         if(err || !doc ) { res.json("Taka oferta nie istnieje!")}
-        else { res.json("Oferta została usunięta") } }))
+        else {
+          const string_def = "..\\public\\images"
+          data[0].image.forEach( el => fs.unlink(el, ()=>{ console.log( 'image deleted' ) }) )
+          res.json("Oferta została usunięta") } });
+      })
       .catch(err => res.status(400).json('Error: ' + err));
   });
 

@@ -51,13 +51,13 @@ const deleteOffer = (e) => {
 
     return (
         <>
-        <div onSubmit={addOffer} >
+        <div  >
         <label>Dodaj nową ofertę:</label>
-            <form action="http://localhost:4000/data" method="post" encType="multipart/form-data">
+            <form   >
                 <input type="file" name="avatar" multiple="multiple" onChange={changeImage} />
-                <input type="text" name="nazwa" value={offer_name} onChange={changeName}  />
-                <input type="text" name="desc" value={desc}  onChange={changeDesc}  />
-                <button ></button>
+                <input type="text" name="nazwa" onChange={changeName}  />
+                <input type="text" name="desc"   onChange={changeDesc}  />
+                <button onClick={addOffer} ></button>
             </form>
        
         </div>
