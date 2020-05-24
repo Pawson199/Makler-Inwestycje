@@ -6,7 +6,7 @@ export default function Oferta() {
     const [oferty, setOferty] = useState([])
 
    useEffect( () => {
-    fetch('http://localhost:4000/data')
+    fetch('/data')
       .then(response =>  response.json() )
       .then(json => setOferty( json ) )
       .catch((error) => {

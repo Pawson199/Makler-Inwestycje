@@ -1,5 +1,5 @@
 import React from 'react'
-import background_city from '../images/Untitled2.svg'
+import background_city from '../images/zmianka.svg'
 import background_offers from '../images/home_choosing.svg'
 import Slider from '../components/Slider'
 import { Map, Marker, TileLayer } from 'react-leaflet'
@@ -9,12 +9,11 @@ export default function Home(props) {
         <>
                 <span className="home_desc">
                     <div className="desc_holder" >
-                        <h1>Zaoszczędź czas i pieniądze</h1>
+                        <h1>ZAOSZCZĘDŹ CZAS I PIENIĄDZE</h1>
                         <h2>Zaprojektuj z nami wymarzony dom, mieszkanie, lub odbierz gotowy projekt!</h2>
                         <span className="button_holder">
                             <button className="home_intro_button" >NAPISZ DO NAS</button>  
                         </span> 
-                        <span className="empty_sticker" ></span>  
                     </div>
                     <div className="home_image">
                         <img alt="background_city" className="contain" src={background_city} ></img>

@@ -33,7 +33,7 @@ export default function Admin() {
 
  const addOffer = (e) => {
         e.preventDefault()
-        fetch("http://localhost:4000/data", {
+        fetch("/data", {
             method:"POST",
             body:forma
         })
@@ -42,7 +42,7 @@ export default function Admin() {
 
 const deleteOffer = (e) => {
     e.preventDefault()
-    fetch( `http://localhost:4000/data/${offer_name_delete}`, {
+    fetch( `data/${offer_name_delete}`, {
         method: "DELETE"
     } )
     .then( response => response.json() )

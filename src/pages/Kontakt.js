@@ -15,7 +15,7 @@ export default function Kontakt() {
 
     const sendIt = (e) => {
         e.preventDefault()
-        fetch('http://localhost:4000/send', {
+        fetch('/send', {
             method: "POST",
             body: JSON.stringify({message, email}),
             headers: {

@@ -4,13 +4,43 @@ const app = express()
 const creds = require('./config');
 var nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
+const path = require('path')
 
-require('dotenv').config();
+app.get('/admin', function(req, res) {
+  res.sendFile(path.join(__dirname, '../index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+app.get('/oferta', function(req, res) {
+  res.sendFile(path.join(__dirname, '../index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+app.get('/about', function(req, res) {
+  res.sendFile(path.join(__dirname, '../index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+app.get('/kontakt', function(req, res) {
+  res.sendFile(path.join(__dirname, '../index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
+const dotenv = require('dotenv').config();
 app.use(cors())
 app.use(express.json())
 
-app.listen(4000, () => {
-    console.log(`Server is running on port: 4000`);
+app.listen(5000, () => {
+    console.log(`Server is running on port: 5000`);
 })
 
 var transport = {

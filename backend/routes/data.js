@@ -9,7 +9,7 @@ const uri = process.env.ATLAS_URI;
     
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    const file_path = '../public/images'
+    const file_path = '../images'
     cb(null, file_path);
   },
   filename: function(req, file, cb) {
@@ -33,6 +33,7 @@ const storage = multer.diskStorage({
   })
 
 router.route('/').get((req, res) => {
+  console.log("xdd")
     Data.find()
       .then(data => res.json(data))
       .catch(err => res.status(400).json('Error: ' + err));

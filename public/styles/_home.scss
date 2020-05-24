@@ -6,53 +6,34 @@
 .home_desc{
     z-index: 4;
     width: 100%;
+    max-height:45em;
     position: relative;
         .desc_holder{
             width: 100%;
-            height: 100%;
             z-index: 7;
             color: white;
-            background-color: #9AC932;
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(7, 1fr);
             box-sizing: border-box;
         }
-
-        .empty_sticker{
-            min-width: 100%;
-            height: 100%;
-            grid-area: 1 / 1 / 8 / 2 ;
-            position: relative;
-            z-index: 10;
-            background-color: #9AC932
-        }
-        .empty_sticker::before{
-            content: "";
-            height: 100%;
-            width: 100%;
-            right: -98%;
-            z-index: 2;
-            clip-path: polygon(0 0, 22% 0, 7% 100%, 0 100%);
-            position: absolute;
-            background-color: #9AC932;
-        }
            
           h1{
                 grid-area: 3 / 1 / 4 / 2 ;
-                @include font-size(3.5em,2.5em);
+                @include font-size(3em,1.8em);
                 width:90%;
                 margin: 0;
-                text-align: center;
+                text-align: left;
                 justify-self: inherit;
                 z-index: 25;
+                color: #1C82CE;
             }
             h2{
                 grid-area: 4 / 1 / 5 / 2 ;
-                @include font-size(1.5em,1.2em);
+                @include font-size(1.4em,1em);
                 max-width:90%;
                 width:90%;
-                text-align: center;
+                text-align: left;
                 align-self: center;
                 justify-self: inherit; 
                 margin: 0;
@@ -60,13 +41,14 @@
                 font-family: 'Montserrat', sans-serif;
                 z-index: 25;
                 box-sizing: border-box;
+                color: #3F3D56;
             }
             .button_holder{
                 grid-area: 5 / 1 / 6 / 2 ;
                 width:90%;
                 display: flex;
                 align-self: center;
-                justify-content: center;
+                justify-content: flex-start;
                 justify-self: inherit;
                 z-index: 25;
             }
@@ -74,7 +56,7 @@
             .home_intro_button{
                 width: 16em;
                 height: 4em;
-                background-color: #1C82CE;
+                background-color: #9AC932;
                 color: white;
                 position: relative;
                 border: 0;
@@ -87,7 +69,7 @@
             .home_intro_button::after{
                 content: "";
                 top: -3px;
-                right: -3px;
+                left: -3px;
                 height: 100%;
                 width: 100%;
                 align-self: start;
@@ -105,13 +87,12 @@
     position: relative;
     display: flex;
     align-items: flex-end;
-    padding-top: 1em;
 }
 .home_image img{
   width: 100%;
   max-width: 100%;
+  max-height: 100%;
 }
-
 
 .offers{
     width: 100%;
@@ -139,61 +120,39 @@
         justify-content: space-between;
         align-items: center;
         flex-direction: column; 
-        border:2px #3F3D56 solid;
       }
+  
       .dic_image_container{
         max-height: 90%;
         max-width: 100%;
       }
       .dicimage{
         max-width: 100%;
-        max-height: 20em; 
+        min-width: 100%;
       }
       .dic h1{
-        height: 7em;
+        height: 8em;
         width: 80%;
         color: #3F3D56;
-        font-size: 1.6em;
+        @include font-size(1.6em, 1.2em);
         margin: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-      }
-      .dic_button_container{
-         min-width: 100%;
-          height: 7em;
-          display: flex;
-          justify-content: center;
-      }
-      .dic_button_container button{
-        height: 60%;
-        min-width: 60%;
-        background-color: #1C82CE;
-        color: white;
         position: relative;
-        border: 0;
-        font-family: 'Montserrat', sans-serif;
       }
-      .dic_button_container button::after{
-        content: "";
-        top: -3px;
-        right: -3px;
-        height: 100%;
-        width: 100%;
-        align-self: start;
-        justify-self: center;
-        background-color: #3F3D56;
-        position: absolute;
-        z-index: -5;
-    } 
-    .dic_button_container button:active {
-        top: -2px;
-        right: -2px;
-    }
-}
-.offers::before{
-    content: "";
+      .dic h1::after{
+          content: "";
+          position: absolute;
+          @include display-flex(row, center);
+          height: 60%;
+          width: 85%;
+          background-color: #9AC932;
+          left: 0;
+          bottom: -2em;
+          z-index: -2;
+      }
 }
 
 
@@ -260,32 +219,34 @@
 
 @media only screen and (max-width: 901px) {
     .home_desc{
-        height: 100vh;
-        min-height: 40em;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 60% 40%;
+        height: 85vh;
+        @include display-flex(column, space-between)
     }
     .desc_holder{
-        @include display-flex(row, center);
-        max-height: 100%;
+        height: 60%;
         max-width: 100%;
         text-align: center;
         justify-self: center;
-    }
-    .empty_sticker::before{
-       display: none;
+            h1{
+                text-align: center;
+            }
+            h2{
+                text-align: center;
+            }
+            .button_holder{
+                justify-content: center;
+            }
     }
     .home_image{
-        grid-area: 2 / 1 / 3 / 2;
+        height: 40%;
     }
     .home_image img{
-        height: 100%;
+        min-height: 100%;
+       max-height: 100%;
       }
     .offers{
-        padding: 0;
-        height: 60vh;
-        min-height: 30em;
+        height: 100%;
+        padding: 0 0 2em 0;
     }
     .button_holder{
         justify-content:  center;
@@ -314,8 +275,20 @@
         @include display-flex(row, center);
         max-height: 100%;
         max-width: 100%;
+        height: 100%;
         text-align: left;
         justify-self: right;
+
+            h1{
+                text-align: left;
+            }
+            h2{
+                text-align: left;
+            }
+            .button_holder{
+                justify-content: flex-start;
+            }
+
     }
     .home_image{
         grid-area: 1 / 2 / 2 / 3 ;
@@ -324,14 +297,13 @@
         justify-content:  flex-start;
     }
     .offers{
-        height: 85vh;
-        min-height: 32em;
-        padding: 3em 0;
+        height:auto;
+        padding: 1em 0 4em 0 ;
     }
     .map{
         display: grid;
-    grid-template-columns: 40% 60% ;
-    grid-template-rows: 1fr ;
+        grid-template-columns: 40% 60% ;
+        grid-template-rows: 1fr ;
         height: 65vh;
         min-height: 32em;
     }
