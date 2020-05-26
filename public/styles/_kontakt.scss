@@ -1,59 +1,6 @@
 
 @import './functions';
 
-.employees{
-    position: relative;
-    width: 90%;
-    max-width: 120em;
-    max-height: 35em;
-    & div{
-        border: 0.2em solid #9AC932;
-        background-color:  white;
-        @include display-flex( column, center );
-        color: #3F3D56;
-        position: relative;
-        box-sizing: border-box;
-
-            & img{
-                position: absolute;
-                right: 0;
-                top: -10%;
-            }
-
-            & p{
-                margin: 0;
-                height: 17%;
-                @include display-flex( column, center );
-                text-align: center;
-            }
-
-            & p:nth-child(3){
-                font-size: 1.7em;
-            }
-            & p:nth-child(5){
-                font-size: 1.7em;
-            }
-            & p:nth-child(4){
-                font-size: 1.4em;
-                color: #1C82CE;
-            }
-            & p:last-child{
-                font-size: 1.3em;
-                color: #1C82CE;
-            }
-
-            & h1{
-                margin: 0;
-                height: 30%;
-                @include display-flex( column, center );
-                text-align: center;
-                z-index: 22;
-            }
-
-
-    }
-}
-
 .label{
     position: relative;
     width: 100%;
@@ -81,109 +28,143 @@
     }
 }
 
-.form{
-    height: 50vh;
-    width: 90%;
-    max-width: 120em;
-    max-height: 40em;
-    min-height: 28em;
-    display: grid;
-    grid-template-columns: 1fr ;
-    grid-template-rows: repeat(10, 1fr) ;
-    background-color:#9AC932;
-    color: white;
-
-        & h1:nth-child(1){
-            align-self: center;
-            justify-self: center;
+.info_contact{
+    @include display-flex(column, space-around);
+    position: relative;
+    margin: 2em;
+    padding: 2em 0 ;
+    background-color: #9AC932;
+    border-top: 0.3em solid #3F3D56;
+        & * {
+            color: white;
+            @include font-size(1.2em, 1em);
             margin: 0;
-            grid-area: 2/ 1/ 3/ 2;
-            color: white;
+            padding: 0;
         }
-
-        & input:nth-child(2) {
-            width: 90%;
-            height: 50%;
-            align-self: center;
-            justify-self: center;
-            grid-area: 3/ 1/ 5/ 2;
+        & h1{
+            @include font-size(1.6em, 1.2em);
+            color: #3F3D56;
+            position: absolute;
+            top:-2em;
+            left: 0;
+            width: 100%;
+        }
+        & p {
+            text-align: center;
+            padding: 0 0.5em;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
         }
-        & textarea:nth-child(3) {
-            width: 90%;
-            height: 100%;
-            grid-area: 5/ 1/ 9/ 2;
-            box-sizing: border-box;
-            justify-self: center;
-            resize: none;
-            font-family: 'Montserrat', sans-serif;
-
-        }
-        & input:nth-child(4) {
-            width: 20%;
-            height: 50%;
-            grid-area:9/ 1/ 11/ 2;
-            align-self: center;
-            justify-self: center;
-            box-shadow: 5px -5px 0 #3F3D56;
-            border: 0;
-            background-color: #1C82CE;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-        }  
-        & input:nth-child(4):active{
-            box-shadow: 5px -5px 0 #9AC932 ;
-            padding-bottom: 5px;
+        & img{
+            position: absolute;
+            top: -4em;
+            right: 1em;
+            width: auto;
         }
 }
 
 
-@media only screen and (max-width: 901px) {
-    .employees{
-        @include display-flex(column, space-between);
-        height: 120vh;
-        & div{
+.form{
+    width: 100%;
+    @include display-flex(column, center);
+    margin: 2em;
+    margin-bottom: 4em;
+    padding: 0 2em;
+    box-sizing: border-box;
+    background-color: rgb(245, 245, 245);
+    z-index: 25;
+        & label{
+            @include display-flex(column, center);
+            align-items: flex-start;
+            @include font-size(1.6em, 1.2em);
             width: 100%;
-            height: 50%;
-            margin-bottom: 1em;
+            color: #3F3D56;
+             & textarea {
+                 width: 100%;
+                 resize: none;
+                 margin: 0;
+                 padding: 0;
+                 height: 12em;
+                 font-size: 1em;
+                 margin-bottom: 2em;
+             }
+             & input {
+                 margin: 0;
+                 padding: 0;
+                 width: 100%;
+                 height: 3em;
+                 margin-bottom: 2em;
+             }
         }
+        & h1{
+            @include font-size(4em, 3em);
+            color: #1C82CE;
+        }
+        & .message_button {
+                width: 16em;
+                height: 4em;
+                background-color: #9AC932;
+                color: white;
+                position: relative;
+                border: 0;
+                font-family: 'Montserrat', sans-serif;
+                margin-bottom: 3em;
+                    &:before {
+                        content: "";
+                            top: -3px;
+                            left: -3px;
+                            height: 100%;
+                            width: 100%;
+                            align-self: start;
+                            justify-self: center;
+                            background-color: #3F3D56;
+                            position: absolute;
+                            z-index: -5;
+                    }
+        }
+        .message_button:active {
+            top: -2px;
+            left: -2px;
+        }
+}
+
+@media only screen and (max-width: 901px) {
+    .info_contact{
+        width: 80%; 
+        min-height: 10em;
+            & img{
+                display: none;
+            }
+    }
+    .info_contact_container{
+        @include display-flex(column, space);
+        width: 100%;
     }
     .label{
         height: 8vh;
         min-height: 8em;
     }
-
-    .form{
-        margin-bottom:1em;
+    .form_holder{
+        width: 100%;
+        @include display-flex(row, center)
     }
-
 }
 
 @media only screen and (min-width: 901px) {
-    .employees{
-        @include display-flex(row, space-between);
-        height: 50vh;
-        
-        & div{
-            width: 47%;
-            height: 100%;
-        }
+    .info_contact{
+        width: 50%; 
+        min-height: 12em;
     }
-
+    .info_contact_container{
+        @include display-flex(row, space-around);
+        width: 90%;
+    }
     .label{
         height: 25vh;
         min-height: 13em;
     }
-
-    .form{
-        margin-top:4em;
-        margin-bottom:4em;
+    .form_holder{
+        width: 90%;
+        @include display-flex(row, center)
     }
-
-    .div_and_margin{
-        margin-bottom:4em;
-    }
-
 }
 

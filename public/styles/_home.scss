@@ -6,7 +6,6 @@
 .home_desc{
     z-index: 4;
     width: 100%;
-    max-height:45em;
     position: relative;
         .desc_holder{
             width: 100%;
@@ -64,7 +63,7 @@
             }
             .home_intro_button:active {
                 top: -2px;
-                right: -2px;
+                left: -2px;
             }
             .home_intro_button::after{
                 content: "";
@@ -104,10 +103,9 @@
         position: absolute;
         max-height: 40%;
         width: auto;
-        bottom: 0;
-        right: 0;
+        bottom: -7em;
+        left: 2em;
         z-index: -1;
-        transform: rotateY(160deg);
     }
 
     .dic{
@@ -118,7 +116,7 @@
         position: relative;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column; 
       }
   
@@ -131,23 +129,23 @@
         min-width: 100%;
       }
       .dic h1{
-        height: 8em;
+        height: 6em;
         width: 80%;
         color: #3F3D56;
         @include font-size(1.6em, 1.2em);
         margin: 0;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
-        text-align: center;
+        text-align: left;
         position: relative;
       }
       .dic h1::after{
           content: "";
           position: absolute;
           @include display-flex(row, center);
-          height: 60%;
-          width: 85%;
+          height: 3em;
+          width: 100%;
           background-color: #9AC932;
           left: 0;
           bottom: -2em;
@@ -159,45 +157,35 @@
 .map{
     width: 100%;
     position: relative;
-    background-color: #1C82CE;
 
     .locations{
         width: 100%;
-        height: 80%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         color: white;
-        background-color: #9AC932;
         position: relative;
         align-self: center;
         z-index: 999;
 
             & h1{
                 width: 80%;
-                text-align: center;
-                @include font-size(2.6em,2em);
+                text-align: inherit;
+                @include font-size(2.6em,1.8em);
                 min-width: 80%;
                 margin-bottom: 0;
+                color: #3F3D56 ;
             }
 
             & p {
                 width: 80%;
-                text-align: center;
-                @include font-size(1.4em,1em);
+                text-align: inherit;
+                @include font-size(1.6em, 1.2em);
+                color:#3F3D56;
             }
 
-    }
-    .locations::after{
-        content: "";
-            height: 100%;
-            width: 100%;
-            right: -98%;
-            z-index: 2;
-            clip-path: polygon(0 0, 22% 0, 7% 100%, 0 100%);
-            position: absolute;
-            background-color: #9AC932;
     }
 
     .leaflet-container{
@@ -223,7 +211,7 @@
         @include display-flex(column, space-between)
     }
     .desc_holder{
-        height: 60%;
+        min-height: 60%;
         max-width: 100%;
         text-align: center;
         justify-self: center;
@@ -241,32 +229,33 @@
         height: 40%;
     }
     .home_image img{
-        min-height: 100%;
        max-height: 100%;
+       min-height: 100%;
+       max-width: 100%;
       }
     .offers{
         height: 100%;
-        padding: 0 0 2em 0;
+        padding: 1em 0 0 0;
     }
+    .offers_background{ display: none; }
     .button_holder{
         justify-content:  center;
     }
     .map{
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
-        height: 50vh;
-        min-height: 42em;
+        grid-template-rows: min-content auto;
+        min-height: 35em;
     }
     .locations::after{
         display: none;
      }
+     .locations{text-align: center;}
 }
 
 @media only screen and (min-width: 901px) {
     .home_desc{
         height: 85vh;
-        min-height: 32em;
         display: grid;
         grid-template-columns: 40% 60%;
         grid-template-rows: 100%;  
@@ -291,6 +280,7 @@
 
     }
     .home_image{
+        min-height: 100%;
         grid-area: 1 / 2 / 2 / 3 ;
     }
     .button_holder{
@@ -298,13 +288,16 @@
     }
     .offers{
         height:auto;
-        padding: 1em 0 4em 0 ;
+        margin: 2em 0 4em 0 ;
     }
     .map{
         display: grid;
         grid-template-columns: 40% 60% ;
         grid-template-rows: 1fr ;
-        height: 65vh;
+        height: 50vh;
         min-height: 32em;
+    }
+    .locations{
+        text-align: left;
     }
 }

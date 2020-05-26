@@ -9,7 +9,7 @@ export default function Home(props) {
         <>
                 <span className="home_desc">
                     <div className="desc_holder" >
-                        <h1>ZAOSZCZĘDŹ CZAS I PIENIĄDZE</h1>
+                        <h1>ZAOSZCZĘDŹ CZAS <br/> I PIENIĄDZE</h1>
                         <h2>Zaprojektuj z nami wymarzony dom, mieszkanie, lub odbierz gotowy projekt!</h2>
                         <span className="button_holder">
                             <button className="home_intro_button" >NAPISZ DO NAS</button>  

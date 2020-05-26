@@ -1,17 +1,17 @@
 @import './functions';
 
 .about_us{
-    width: 90%;
+    width: 80%;
     max-width: 120em;
-    border: 0.2em solid #9AC932;
-    background-color:  white;
-    @include font-size(1.6em, 1.4em);
+    background-color: #9AC932;
+    @include font-size(1.6em, 1.2em);
     @include display-flex(row, center);
     text-align: center;
     box-sizing: border-box;
-    color:#3F3D56;
+    color:white;
     margin: 0;
     position: relative;
+    border-top: 0.2em solid #3F3D56;
 }
 
 .quotation{
@@ -20,17 +20,17 @@
     right: 0;
     font-size: 6em;
     margin: 0;
+    color: #3F3D56;
 }
 
 .partners{
-    width: 90%;
+    width: 80%;
     height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
     grid-template-rows:1fr;
     row-gap: 1em;
     box-sizing: border-box;
-    padding: 5em 0 5em 0;
         & img{
             max-width: 100%;
             align-self: center;
@@ -38,54 +38,36 @@
 }
 
 .services{
-    width: 90%;
+    height: auto;
+    width: 80%;
     max-width: 120em;
-    border: 0.2em solid #9AC932;
-    background-color:  white;
-    @include font-size(1.6em, 1.2em);
     @include display-flex(column, center);
     text-align: center;
     box-sizing: border-box;
-    color:#3F3D56;
-}
-.services:nth-last-child(1){
-    @include display-flex(column, space-between);
-    margin-bottom: 1em;
-        & button{
-            margin-top: 2.5em;
-            width: 40%;
-            height: 3em;
-            border: 0;
-            background-color: #1C82CE;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            box-shadow: 5px -5px 0 #3F3D56;
-        }
-        & button:active{
-           box-shadow: 5px -5px 0 white ;
-           padding-bottom: 5px;
+    color:white;
+        & p{
+            @include font-size(4em, 3em);
+            color: #1C82CE;
         }
 }
 
 .one_of_service{
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 1fr ;
-    width: 70%;
-    margin: 1.5em;
+    background-color: #9AC932;
+    min-height: 6em;
     & div{
         width: 2.5em;
         height: 2.5em;
-        background-color: #9AC932;
+        background-color: #3F3D56;
         @include display-flex(row,center);
         color: white;
         align-self: center;
         justify-self: center;
     }
     & p{ 
-        @include font-size(1.4em, 1.2em);
-        color:#3F3D56;
+        @include font-size(1.4em, 1em);
+        color:white;
         padding: 0 1em 0 1em;
+        margin: 0;
       }
 }
 
@@ -93,8 +75,24 @@
     .about_us{
         padding: 2em;
     }
+    .partners{
+        padding: 0 0 2em 0;
+    }
     .services{
         padding: 1em;
+    }
+    .one_of_service{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100%;
+        margin: 1em;
+            & p{
+                text-align: center;
+                height: 100%;
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
     }
 }
 
@@ -102,7 +100,18 @@
     .about_us{
         padding: 3em;
     }
-    .services{
-        padding: 2em;
+    .partners{
+        padding: 5em 0 5em 0;
+    }
+    .one_of_service{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr;
+        width: 100%;
+        margin: 1em;
+        & p{
+            text-align: left;
+            align-self: center;
+        }
     }
 }

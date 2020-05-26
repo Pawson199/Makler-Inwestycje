@@ -25,6 +25,14 @@ export default function About() {
             obsługą rynku nieruchomości oraz inwestycjami w grunty. Nasze usługi są
             kierowane zarówno do klientów indywidualnych, jak i do firm.
         </div>
+        <div className="services">
+          <p>Zakres naszych usług</p>
+        <Service number="1" desc="Pośrednictwo w sprzedaży, kupnie i wynajmie nieruchomości" />
+        <Service number="2"  desc="Profesjonalne doradztwo" />
+        <Service number="3"  desc="Pośrednictwo w inwestycjach w nieruchomości" />
+        <Service number="4"  desc="Pośrednictwo finansowe" /> 
+        <Service number="5"  desc="Pośrednictwo w kupnie nowoczesnych domów pasywnych" />
+        </div>
         <span className="partners">
             <img alt="logo_leroy" src={leroy}/>
             <img alt="logo_nobo"  src={nobo}/>
@@ -32,18 +40,6 @@ export default function About() {
             <img alt="logo_profit" src={profit}/>
             <img alt="logo_constrado" src={constrado}/>
         </span>
-        <div className="services">
-          Zakres naszych usług
-        </div>
-        <Service number="1" desc="Pośrednictwo w sprzedaży, kupnie i wynajmie nieruchomości" />
-        <Service number="2"  desc="Pośrednictwo w kupnie nowoczesnych domów pasywnych" />
-        <Service number="3"  desc="Pośrednictwo w inwestycjach w nieruchomości" />
-        <Service number="4"  desc="Profesjonalne doradztwo" />
-        <Service number="5"  desc="Pośrednictwo finansowe" />
-        <div className="services">
-          Odwiedź też naszą galerię! 
-            <button>Klik!</button>
-        </div>
        </>
     )
 }

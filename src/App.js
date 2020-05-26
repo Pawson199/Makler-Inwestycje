@@ -12,15 +12,16 @@ import Footer from './components/Footer'
 function App() {
 
   function first_amount_of_slides(){
-    if(window.innerWidth < 600 ){ return 1 }
-    else if(window.innerWidth > 600 & window.innerWidth < 1000 ){ return 2 }
-    else if(window.innerWidth > 1200){return 3}
+    if(window.innerWidth < 900 ){ return 1 }
+    else if(window.innerWidth > 900 & window.innerWidth < 1800 ){ return 2 }
+    else if(window.innerWidth > 1800 ){return 3}
 }
 const [slides, setslides] = useState(first_amount_of_slides())
 const change_quentity_of_slides = () => {
-    if(window.innerWidth < 600 ){ setslides(1) }
-    else if(window.innerWidth > 600 & window.innerWidth < 900 ){ setslides(2) }
-    else if(window.innerWidth > 900 & window.innerWidth < 1200){setslides(3)}
+
+    if(window.innerWidth < 900  ){ setslides(1) }
+    else if(window.innerWidth > 900 & window.innerWidth < 1800 ){setslides(2)}
+    else if(window.innerWidth > 1800 ){setslides(3)}
    }
  useEffect(() => {
    window.addEventListener('resize', change_quentity_of_slides )
