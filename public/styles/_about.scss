@@ -3,15 +3,15 @@
 .about_us{
     width: 80%;
     max-width: 120em;
-    background-color: #9AC932;
+    background-color: rgb(245, 245, 245);
     @include font-size(1.6em, 1.2em);
     @include display-flex(row, center);
     text-align: center;
     box-sizing: border-box;
-    color:white;
+    color: #3F3D56;
     margin: 0;
     position: relative;
-    border-top: 0.2em solid #3F3D56;
+    border-top: 0.2em solid #9AC932;
 }
 
 .quotation{
@@ -52,12 +52,12 @@
 }
 
 .one_of_service{
-    background-color: #9AC932;
+    background-color: rgb(245, 245, 245);
     min-height: 6em;
     & div{
         width: 2.5em;
         height: 2.5em;
-        background-color: #3F3D56;
+        background-color: #9AC932;
         @include display-flex(row,center);
         color: white;
         align-self: center;
@@ -65,8 +65,7 @@
     }
     & p{ 
         @include font-size(1.4em, 1em);
-        color:white;
-        padding: 0 1em 0 1em;
+        color:#3F3D56;
         margin: 0;
       }
 }
@@ -77,9 +76,6 @@
     }
     .partners{
         padding: 0 0 2em 0;
-    }
-    .services{
-        padding: 1em;
     }
     .one_of_service{
         display: flex;
@@ -108,7 +104,6 @@
         grid-template-columns: 20% 80%;
         grid-template-rows: 1fr;
         width: 100%;
-        margin: 1em;
         & p{
             text-align: left;
             align-self: center;

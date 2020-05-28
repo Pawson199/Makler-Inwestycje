@@ -5,6 +5,10 @@ import Slider from '../components/Slider'
 import { Map, Marker, TileLayer } from 'react-leaflet'
 
 export default function Home(props) {
+ 
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
     return (
         <>
                 <span className="home_desc">
@@ -29,7 +33,8 @@ export default function Home(props) {
                         <p>Lokalizacje inwestycji w wielu ciekawych miejscach. Od miast po wsie, min:
                         Łódź Widzew, Zgierz Skotniki, Zgierz Swoboda.</p>
                     </div>
-                    <Map center={[51.7592, 19.4560]} zoom={9} zoomControl={false} >
+                    <Map center={[51.8592, 19.4560]} zoom={10} zoomControl={false} className="
+                    mapa" >
                         <TileLayer
                         url="https://api.mapbox.com/styles/v1/starnaw2/cka1gtpne1rdm1ippw49w289j/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3Rhcm5hdzIiLCJhIjoiY2thMWZxOHdiMDAxdTNkb2N3NHIwZTY3OSJ9.M5JBQc0BGcrg3uj8YgpMQw"
                         attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'

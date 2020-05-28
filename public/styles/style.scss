@@ -6,8 +6,13 @@ html{
     font-size: 1rem;
 }
 
+#root{
+    height: 100%;
+}
+
 body{
     width: 100%;
+    height: 100%;
     margin: 0;
     position: relative;
     .menu{
@@ -49,18 +54,22 @@ body{
         @import './kontakt';
         @import './oferta';
         @import './home';
+        min-height: 100%;
     }
 
     .footer{
         min-width: 100%;
-        min-height: 3em;
-        height: 7vh;
+        min-height: 2em;
+        height: auto;
         @include display-flex(row, center);
-        @include font-size(0.9em, 0.6em);
-        color: white;
+        @include font-size(0.8em, 0.6em);
+        color: #3F3D56;
+        padding:  1em;
         margin: 0;
-        background-color: #9AC932;
+        background-color: rgb(245, 245, 245);;
         text-align: center;
+
+        box-sizing: border-box;
     }
 }
 

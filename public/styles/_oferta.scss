@@ -1,0 +1,80 @@
+@import "./functions";
+
+.oferty{
+    width: 90%;
+    display: grid;
+    margin-bottom: 2em;
+}
+
+.single_offer{
+    border-bottom: 0.3em solid #9AC932;
+    color: #3F3D56;
+    @include display-flex(column, space-between);
+    background-color: rgb(245, 245, 245);
+    margin: 1em;
+    div{
+        margin-bottom: auto;
+        @include display-flex(column, center);
+        padding: 0 1em
+    }
+    h1{
+        margin-top: 20px;
+        @include font-size(1.8em, 1.4em);
+    }
+    h2{
+        @include font-size(1em, 0.8em);
+        text-align: center;
+        padding: 0 1em;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    & span{
+        position: relative;
+        & img{
+            width: 100%;
+            transition: 250ms linear;
+        }
+        & a:hover{
+            & img{ 
+                transform: scale(1.02);
+                filter: brightness(0.3);
+             }
+                &:after {
+                    color:#9AC932;
+                    content:"SPRAWDŹ OFERTĘ!";
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    @include display-flex( row, center );
+                    top: 0
+                }
+        }
+
+    }
+
+}
+
+
+@media only screen and (max-width: 901px) {
+    .oferty{
+        grid-template-columns: repeat(auto-fit, minmax( 17em, 1fr ) );
+    }
+
+    .single_offer span a::after{
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (min-width: 901px) {
+    .oferty{
+        grid-template-columns: repeat(auto-fit, minmax( 22em, 1fr ) );
+    }
+
+    .single_offer span a::after{
+        font-size:2em;
+        text-align: center;
+    }
+}
+

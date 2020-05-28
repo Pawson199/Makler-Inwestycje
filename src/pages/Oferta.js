@@ -25,7 +25,9 @@ export default function Oferta() {
             <h1 className="label1" >Oferty</h1>
             <h1 className="label2" >Oferty</h1>
         </label>
-        <div className="oferty">{oferty_map}</div>
+        <div className="oferty">
+            {oferty_map}
+        </div>
        </>
     )
 }
