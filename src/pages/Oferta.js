@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import Offer from '../components/Offer'
+import React, {useContext} from 'react'
+import {useParams} from 'react-router-dom'
+import {ThemeContext} from '../api_context'
+
 
 export default function Oferta() {
 
-    const [oferty, setOferty] = useState([])
+    const oferty = useContext(ThemeContext)
 
-   useEffect( () => {
-    fetch('/data')
-      .then(response =>  response.json() )
-      .then(json => setOferty( json ) )
-      .catch((error) => {
-        console.log(error);
-     }) 
-    }, [])
+    const {name_of_offer} = useParams()
 
-    
-    console.log(oferty)
+    const offer_name = oferty.find( el => name_of_offer.name === el )
 
-    let oferty_map = oferty.map( (el,id) => <Offer key={id} desc={el.desc} photos={el.image} name={el.nazwa} /> )
+    console.log(offer_name)
 
     return (
-        <>
-        <label className="label">
-            <h1 className="label1" >Oferty</h1>
-            <h1 className="label2" >Oferty</h1>
-        </label>
-        <div className="oferty">
-            {oferty_map}
+        <div>
+            
         </div>
-       </>
     )
 }

@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import { Switch, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
+import Oferty from './pages/Oferty'
 import Oferta from './pages/Oferta'
 import Kontakt from './pages/Kontakt'
 import Admin from './pages/Admin'
@@ -41,10 +42,11 @@ const change_quentity_of_slides = () => {
    <div className='container'>
     <Switch>
         <Route exact path="/"> <Home slides={slides}/> </Route>
-        <Route path="/oferta"> <Oferta/> </Route>
+        <Route path="/oferta"> <Oferty/> </Route>
         <Route path="/about"> <About/> </Route>
         <Route path="/kontakt"> <Kontakt/> </Route>
         <Route path="/admin"> <Admin/> </Route>
+        <Route path="/oferta/:oferta"> <Oferta/> </Route>
     </Switch>
    </div>
 
