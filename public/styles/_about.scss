@@ -77,6 +77,10 @@
     .partners{
         padding: 0 0 2em 0;
     }
+    .services span:nth-child(2) {
+            margin-top: 0;
+        }
+    
     .one_of_service{
         display: flex;
         justify-content: space-around;
