@@ -4,7 +4,7 @@
     width: 80%;
     max-width: 120em;
     background-color: rgb(245, 245, 245);
-    @include font-size(1.6em, 1.2em);
+    @include font-size(1.4em, 1em);
     @include display-flex(row, center);
     text-align: center;
     box-sizing: border-box;
@@ -46,7 +46,7 @@
     box-sizing: border-box;
     color:white;
         & p{
-            @include font-size(4em, 3em);
+            @include font-size(3em,1.8em);
             color: #1C82CE;
         }
 }

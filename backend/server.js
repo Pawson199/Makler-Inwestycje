@@ -35,6 +35,14 @@ app.get('/kontakt', function(req, res) {
   })
 })
 
+app.get('/oferta/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
 const dotenv = require('dotenv').config();
 app.use(cors())
 app.use(express.json())

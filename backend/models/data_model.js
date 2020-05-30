@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 const dataSchema = new Schema({
     image: [String],
+    rzuty: [String],
     nazwa: String,
     desc: String
   });

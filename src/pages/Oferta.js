@@ -6,16 +6,13 @@ import {ThemeContext} from '../api_context'
 export default function Oferta() {
 
     const oferty = useContext(ThemeContext)
+    const {oferta} = useParams()
 
-    const {name_of_offer} = useParams()
-
-    const offer_name = oferty.find( el => name_of_offer.name === el )
-
-    console.log(offer_name)
+    const offer_name = oferty.find( el => el.nazwa === oferta )
 
     return (
         <div>
-            
+            { oferty.length === 0 ? "ŁADOWANKO" : offer_name.nazwa }
         </div>
     )
 }

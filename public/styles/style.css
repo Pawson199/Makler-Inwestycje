@@ -234,13 +234,13 @@ body .container .about_us {
 
 @media only screen and (max-width: 900px) {
   body .container .about_us {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .about_us {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
 }
 
@@ -303,13 +303,13 @@ body .container .services p {
 
 @media only screen and (max-width: 900px) {
   body .container .services p {
-    font-size: 3em;
+    font-size: 1.8em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .services p {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 
@@ -452,13 +452,13 @@ body .container .label .label1 {
 
 @media only screen and (max-width: 900px) {
   body .container .label .label1 {
-    font-size: 3em;
+    font-size: 1.8em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .label .label1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 
@@ -486,13 +486,13 @@ body .container .label .label2 {
 
 @media only screen and (max-width: 900px) {
   body .container .label .label2 {
-    font-size: 10em;
+    font-size: 8em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .label .label2 {
-    font-size: 14em;
+    font-size: 12em;
   }
 }
 
@@ -530,7 +530,7 @@ body .container .info_contact * {
 
 @media only screen and (min-width: 900px) {
   body .container .info_contact * {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
 }
 
@@ -540,18 +540,6 @@ body .container .info_contact h1 {
   top: -2em;
   left: 0;
   width: 100%;
-}
-
-@media only screen and (max-width: 900px) {
-  body .container .info_contact h1 {
-    font-size: 1.3em;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  body .container .info_contact h1 {
-    font-size: 1.8em;
-  }
 }
 
 body .container .info_contact p {
@@ -611,13 +599,13 @@ body .container .form label {
 
 @media only screen and (max-width: 900px) {
   body .container .form label {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .form label {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
 }
 
@@ -645,13 +633,13 @@ body .container .form h1 {
 
 @media only screen and (max-width: 900px) {
   body .container .form h1 {
-    font-size: 3em;
+    font-size: 1.8em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .form h1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 
@@ -663,7 +651,7 @@ body .container .form .message_button {
   position: relative;
   border: 0;
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 body .container .form .message_button:before {
@@ -735,9 +723,12 @@ body .container .form .message_button:active {
     width: 80%;
   }
   body .container .form label {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
   body .container .form h1 {
     text-align: center;
@@ -785,7 +776,7 @@ body .container .form .message_button:active {
             flex-direction: row;
   }
   body .container .form {
-    width: 100%;
+    width: 80%;
   }
   body .container .form label {
     -webkit-box-align: start;
@@ -1112,7 +1103,7 @@ body .container .offers .offers_background {
   position: absolute;
   max-height: 40%;
   width: auto;
-  bottom: -9em;
+  bottom: -7em;
   left: 2em;
   z-index: -1;
 }
@@ -1150,9 +1141,7 @@ body .container .offers .dicimage {
 }
 
 body .container .offers .dic h1 {
-  height: 6em;
   color: #3F3D56;
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1165,38 +1154,14 @@ body .container .offers .dic h1 {
 
 @media only screen and (max-width: 900px) {
   body .container .offers .dic h1 {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .offers .dic h1 {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
-}
-
-body .container .offers .dic h1::after {
-  content: "";
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: 3em;
-  width: 100%;
-  background-color: #9AC932;
-  left: 0;
-  bottom: -2em;
-  z-index: -2;
 }
 
 body .container .map {
@@ -1205,6 +1170,7 @@ body .container .map {
 }
 
 body .container .map .locations {
+  background-color: whitesmoke;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -1224,15 +1190,21 @@ body .container .map .locations {
   position: relative;
   -ms-flex-item-align: center;
       align-self: center;
-  z-index: 999;
+  z-index: -3;
+  padding-left: 2em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body .container .map .locations h1 {
-  width: 80%;
+  width: 100%;
   text-align: inherit;
-  min-width: 80%;
+  min-width: 90%;
   margin-bottom: 0;
   color: #1C82CE;
+  padding-right: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media only screen and (max-width: 900px) {
@@ -1243,25 +1215,28 @@ body .container .map .locations h1 {
 
 @media only screen and (min-width: 900px) {
   body .container .map .locations h1 {
-    font-size: 2.6em;
+    font-size: 3em;
   }
 }
 
 body .container .map .locations p {
-  width: 80%;
+  width: 100%;
   text-align: inherit;
   color: #3F3D56;
+  padding-right: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media only screen and (max-width: 900px) {
   body .container .map .locations p {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body .container .map .locations p {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
 }
 
@@ -1278,6 +1253,7 @@ body .container .location_photo {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 2em;
   }
   body .container .leaflet-control {
     font-size: 0.6em;
@@ -1304,7 +1280,7 @@ body .container .location_photo {
             flex-direction: column;
   }
   body .container .desc_holder {
-    min-height: 60%;
+    min-height: 40%;
     max-width: 100%;
     text-align: center;
     -ms-grid-column-align: center;
@@ -1322,15 +1298,21 @@ body .container .location_photo {
             justify-content: center;
   }
   body .container .home_image {
-    height: 40%;
+    height: 50%;
+    min-width: 100%;
   }
   body .container .home_image img {
     max-height: 100%;
     min-height: 100%;
     max-width: 100%;
+    min-width: 100%;
   }
   body .container .offers {
     height: 100%;
+    margin: 1em 0 2em 0;
+  }
+  body .container .offers .dic h1::after {
+    display: none;
   }
   body .container .offers_background {
     display: none;
@@ -1355,6 +1337,8 @@ body .container .location_photo {
   }
   body .container .locations {
     text-align: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
     margin: 1em 0;
   }
   body .container .leaflet-container {
@@ -1374,6 +1358,8 @@ body .container .location_photo {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    height: 4em;
+    margin: 0;
   }
   body .container .home_desc {
     height: 85vh;
@@ -1430,7 +1416,9 @@ body .container .location_photo {
   }
   body .container .offers {
     height: auto;
-    margin: 2em 0 4em 0;
+    padding: 3em 0 4em 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   body .container .map {
     display: -ms-grid;
@@ -1448,16 +1436,18 @@ body .container .location_photo {
         justify-self: start;
   }
   body .container .locations {
-    text-align: right;
+    text-align: left;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   body .container .leaflet-container {
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    -ms-grid-column-align: start;
-        justify-self: start;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
 }
 
@@ -1478,10 +1468,10 @@ body .footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  color: #3F3D56;
+  color: white;
   padding: 1em;
   margin: 0;
-  background-color: whitesmoke;
+  background-color: #9AC932;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

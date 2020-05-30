@@ -13,7 +13,7 @@
         color: #1C82CE;
         max-height: 100%;
         margin: 0;
-        @include font-size(4em, 3em);
+        @include font-size(3em,1.8em);
         @include display-flex(row, center);
     }
     .label2{
@@ -23,7 +23,7 @@
         margin: 0;
         z-index: -21221;
         opacity: 0.25;
-        @include font-size(14em, 10em);
+        @include font-size(12em, 8em);
         @include display-flex(row, center)
     }
 }
@@ -37,12 +37,11 @@
     border-top: 0.3em solid #9AC932;
         & * {
             color: #3F3D56;
-            @include font-size(1.2em, 1em);
+            @include font-size(1.4em, 1em);
             margin: 0;
             padding: 0;
         }
         & h1{
-            @include font-size(1.8em, 1.3em);
             color: #1C82CE;
             position: absolute;
             top:-2em;
@@ -73,7 +72,7 @@
     z-index: 25;
         & label{
             @include display-flex(column, center);
-            @include font-size(1.6em, 1.2em);
+            @include font-size(1.4em, 1em);
             width: 100%;
             color: #3F3D56;
              & textarea {
@@ -94,7 +93,7 @@
              }
         }
         & h1{
-            @include font-size(4em, 3em);
+            @include font-size(3em,1.8em);
             color: #1C82CE;
         }
         & .message_button {
@@ -105,7 +104,7 @@
                 position: relative;
                 border: 0;
                 font-family: 'Montserrat', sans-serif;
-                margin-bottom: 3em;
+                margin-bottom: 2em;
                     &:before {
                         content: "";
                             top: -3px;
@@ -149,7 +148,8 @@
         width: 80%;
 
         & label {
-            align-items: center;
+            align-items: left;
+            align-items: flex-start;
         }
 
        & h1{
@@ -177,7 +177,7 @@
         @include display-flex(row, center)
     }
     .form{
-        width: 100%;
+        width: 80%;
 
         & label {
             align-items: flex-start;

@@ -42,7 +42,7 @@ const change_quentity_of_slides = () => {
    <div className='container'>
     <Switch>
         <Route exact path="/"> <Home slides={slides}/> </Route>
-        <Route path="/oferta"> <Oferty/> </Route>
+        <Route exact path="/oferta"> <Oferty/> </Route>
         <Route path="/about"> <About/> </Route>
         <Route path="/kontakt"> <Kontakt/> </Route>
         <Route path="/admin"> <Admin/> </Route>

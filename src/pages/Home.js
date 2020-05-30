@@ -5,9 +5,6 @@ import Slider from '../components/Slider'
 import { Map, Marker, TileLayer } from 'react-leaflet'
 
 export default function Home(props) {
- 
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
     return (
         <>
@@ -29,7 +26,7 @@ export default function Home(props) {
                 </span>
                 <span className="map">
                     <div className="locations" >
-                        <h1>Lokalizacje naszych inwestycji:</h1>
+                        <h1>LOKALIACJE INWESTYCJI</h1>
                         <p>Lokalizacje inwestycji w wielu ciekawych miejscach. Od miast po wsie, min:
                         Łódź Widzew, Zgierz Skotniki, Zgierz Swoboda.</p>
                     </div>

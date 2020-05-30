@@ -35,8 +35,8 @@ export default function About() {
         </div>
         <span className="partners">
             <img alt="logo_leroy" src={leroy}/>
-            <img alt="logo_nobo"  src={nobo}/>
             <img alt="logo_budem"  src={budem}/>
+            <img alt="logo_nobo"  src={nobo}/>
             <img alt="logo_profit" src={profit}/>
             <img alt="logo_constrado" src={constrado}/>
         </span>

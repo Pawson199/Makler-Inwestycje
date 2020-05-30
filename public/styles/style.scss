@@ -63,10 +63,10 @@ body{
         height: auto;
         @include display-flex(row, center);
         @include font-size(0.8em, 0.6em);
-        color: #3F3D56;
+        color: white;
         padding:  1em;
         margin: 0;
-        background-color: rgb(245, 245, 245);;
+        background-color: #9AC932;
         text-align: center;
 
         box-sizing: border-box;

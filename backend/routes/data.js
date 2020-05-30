@@ -20,11 +20,14 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage })
 
   router.route('/').post( upload.array('avatar', 8), (req,res) => {
-      const image = req.files.map( el => el.path )
+      const rzuty = []
+      const image = []
+      req.files.forEach( el => el.filename.includes('rzut') ? rzuty.push(el.path) : image.push(el.path) )
       const nazwa = req.body.offer_name
       const desc = req.body.desc
       const data = new Data({
           image,
+          rzuty,
           nazwa,
           desc
      })
