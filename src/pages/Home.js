@@ -20,6 +20,7 @@ export default function Home(props) {
                         <img alt="background_city" className="contain" src={background_city} ></img>
                     </div>
                 </span>  
+                <div className="offers_h1"><h1>W NASZEJ OFERCIE</h1></div>
                 <span className="offers">
                     <Slider number={props.slides} />
                     <img alt="green_bulb" className="offers_background" src={background_offers} ></img>

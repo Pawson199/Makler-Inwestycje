@@ -40,7 +40,6 @@
 {
     width: 3em;
     height: 3em;
-    margin-right: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,3 +79,16 @@
         top: 0;
     }
 }
+
+@media only screen and (max-width: 901px) {
+    .burger{
+        margin-right: 2em;
+    }
+}
+
+@media only screen and (min-width: 901px) {
+    .burger{
+        margin-right:3em;
+    }
+}
+
