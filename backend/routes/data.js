@@ -25,11 +25,13 @@ const storage = multer.diskStorage({
       req.files.forEach( el => el.filename.includes('rzut') ? rzuty.push(el.path) : image.push(el.path) )
       const nazwa = req.body.offer_name
       const desc = req.body.desc
+      const shortdesc = req.body.shortdesc
       const data = new Data({
           image,
           rzuty,
           nazwa,
-          desc
+          desc,
+          shortdesc
      })
      data.save()
     res.json("Dodano ofertę!")

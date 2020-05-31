@@ -546,7 +546,7 @@ body .container .info_contact * {
 }
 
 body .container .info_contact h1 {
-  color: #1C82CE;
+  color: #3F3D56;
   position: absolute;
   top: -2em;
   left: 0;
@@ -555,7 +555,7 @@ body .container .info_contact h1 {
 
 body .container .info_contact p {
   text-align: center;
-  padding: 0 2em;
+  padding: 0 0.5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -689,7 +689,7 @@ body .container .form .message_button:active {
 @media only screen and (max-width: 901px) {
   body .container .info_contact {
     width: 80%;
-    min-height: 10em;
+    min-height: 8em;
   }
   body .container .info_contact img {
     display: none;
@@ -1104,9 +1104,9 @@ body .container .offers .offers_background {
   position: absolute;
   max-height: 50%;
   width: auto;
-  top: -13em;
+  bottom: -5em;
   left: 2em;
-  z-index: 2;
+  z-index: -2;
 }
 
 body .container .offers .dic {
@@ -1155,8 +1155,7 @@ body .container .offers .dic h1 {
   text-align: left;
   bottom: 0;
   left: 0;
-  background-color: white;
-  border: 0.2em solid  #1C82CE;
+  background-color: whitesmoke;
   border-bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1363,7 +1362,7 @@ body .container .location_photo {
   }
   body .container .locations p {
     margin: 0;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     margin-top: 16px;
   }
   body .container .leaflet-container {

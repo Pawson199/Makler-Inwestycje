@@ -7,7 +7,8 @@ const dataSchema = new Schema({
     image: [String],
     rzuty: [String],
     nazwa: String,
-    desc: String
+    desc: String,
+    shortdesc: String
   });
 
   const Data = mongoose.model('offer', dataSchema);

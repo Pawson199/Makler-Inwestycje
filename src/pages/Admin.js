@@ -5,6 +5,7 @@ export default function Admin() {
     const [ image, setImage ] = useState([])
     const [ rzuty, setRzuty ] = useState([])
     const [desc, setdesc] = useState('')
+    const [shortdesc, setshortdesc] = useState('')
     const [offer_name, setoffer_name] = useState('')
     const [offer_name_delete, setoffer_name_delete] = useState('')
 
@@ -32,6 +33,9 @@ export default function Admin() {
     const changeName = (e) => {
         setoffer_name(e.target.value)
     }
+    const changeshortdesc = (e) => {
+        setshortdesc(e.target.value)
+    }
     const delete_offer_name = (e) => {
         setoffer_name_delete(e.target.value)
     }
@@ -42,6 +46,7 @@ export default function Admin() {
     rzuty.forEach( el => { forma.append('avatar', el, `rzut-${el.name}`) })
     forma.append('desc', desc)
     forma.append('offer_name', offer_name)
+    forma.append('shortdesc', shortdesc)
 
  const addOffer = (e) => {
         e.preventDefault()
@@ -63,7 +68,7 @@ const deleteOffer = (e) => {
 
     return (
         <>
-        <div  >
+        <div className="admin_oferty" >
         <label>Dodaj nową ofertę:</label>
             <form   >
                 Zdjęcia ofert
@@ -72,6 +77,8 @@ const deleteOffer = (e) => {
                 <input type="file" name="avatar" multiple="multiple" onChange={changeRzuty} />
                 Nazwa oferty
                 <input type="text" name="nazwa" onChange={changeName}  />
+                Krótki opis do miniaturki
+                <input type="text" name="shortdesc"   onChange={changeshortdesc}  />
                 Opis oferty
                 <input type="text" name="desc"   onChange={changeDesc}  />
                 <button onClick={addOffer} ></button>

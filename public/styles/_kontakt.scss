@@ -42,7 +42,7 @@
             padding: 0;
         }
         & h1{
-            color: #1C82CE;
+            color: #3F3D56;
             position: absolute;
             top:-2em;
             left: 0;
@@ -50,7 +50,7 @@
         }
         & p {
             text-align: center;
-            padding: 0 2em;
+            padding: 0 0.5em;
             box-sizing: border-box;
         }
         & img{
@@ -127,7 +127,7 @@
 @media only screen and (max-width: 901px) {
     .info_contact{
         width: 80%; 
-        min-height: 10em;
+        min-height: 8em;
             & img{
                 display: none;
             }
