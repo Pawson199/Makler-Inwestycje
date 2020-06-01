@@ -8,7 +8,7 @@ export default function Oferta() {
 
     console.log(oferty)
 
-    let oferty_map = oferty.map( (el,id) => <Offer key={id} desc={el.desc} photos={el.image} name={el.nazwa} /> )
+    let oferty_map = oferty.map( (el,id) => <Offer key={id} desc={el.shortdesc} photos={el.image} name={el.nazwa} /> )
 
     return (
         <>

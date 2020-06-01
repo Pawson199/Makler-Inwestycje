@@ -323,7 +323,7 @@ body .container .services p {
 
 body .container .one_of_service {
   background-color: whitesmoke;
-  min-height: 6em;
+  min-height: 7em;
 }
 
 body .container .one_of_service div {
@@ -352,6 +352,7 @@ body .container .one_of_service div {
 body .container .one_of_service p {
   color: #3F3D56;
   margin: 0;
+  padding: 0 1em;
 }
 
 @media only screen and (max-width: 900px) {
@@ -371,7 +372,7 @@ body .container .one_of_service p {
     padding: 2em;
   }
   body .container .partners {
-    padding: 0 0 2em 0;
+    padding: 0 2em 2em 2em;
   }
   body .container .services span:nth-child(2) {
     margin-top: 0;
@@ -391,9 +392,7 @@ body .container .one_of_service p {
   }
   body .container .one_of_service p {
     text-align: center;
-    height: 100%;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: auto;
   }
 }
 
@@ -524,7 +523,7 @@ body .container .info_contact {
   margin: 2em;
   padding: 2em 0;
   background-color: whitesmoke;
-  border-top: 0.3em solid #9AC932;
+  border-top: 0.2em solid #9AC932;
 }
 
 body .container .info_contact * {
@@ -693,6 +692,9 @@ body .container .form .message_button:active {
   }
   body .container .info_contact img {
     display: none;
+  }
+  body .container .info_contact:nth-child(1) {
+    margin-top: 0;
   }
   body .container .info_contact_container {
     display: -webkit-box;
@@ -1066,6 +1068,7 @@ body .container .offers_h1 {
 body .container .offers_h1 h1 {
   color: #1C82CE;
   margin: 0;
+  text-align: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -1117,6 +1120,8 @@ body .container .offers .dic {
           box-sizing: border-box;
   position: relative;
   z-index: 4;
+  -webkit-box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 body .container .offers .dic_image_container {
@@ -1155,7 +1160,6 @@ body .container .offers .dic h1 {
   text-align: left;
   bottom: 0;
   left: 0;
-  background-color: whitesmoke;
   border-bottom: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1302,7 +1306,9 @@ body .container .location_photo {
             justify-content: center;
   }
   body .container .offers_h1 {
-    padding: 3em 0 2em 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 3em 2em 0 2em;
     margin: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1340,7 +1346,7 @@ body .container .location_photo {
             justify-content: center;
   }
   body .container .map {
-    margin-top: 2em;
+    margin-top: 1em;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 100%;
@@ -1362,7 +1368,7 @@ body .container .location_photo {
   }
   body .container .locations p {
     margin: 0;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
     margin-top: 16px;
   }
   body .container .leaflet-container {

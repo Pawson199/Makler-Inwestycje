@@ -34,7 +34,7 @@
     margin: 2em;
     padding: 2em 0 ;
     background-color: rgb(245, 245, 245);
-    border-top: 0.3em solid #9AC932;
+    border-top: 0.2em solid #9AC932;
         & * {
             color: #3F3D56;
             @include font-size(1.4em, 1em);
@@ -131,6 +131,9 @@
             & img{
                 display: none;
             }
+    }
+    .info_contact:nth-child(1){
+        margin-top: 0;
     }
     .info_contact_container{
         @include display-flex(column, space);
