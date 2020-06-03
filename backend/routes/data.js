@@ -17,9 +17,16 @@ const storage = multer.diskStorage({
   }
 });
 
-  const upload = multer({ storage: storage })
+var limits = {
+  fileSize: 1024 * 1024 * 20
+  };
 
-  router.route('/').post( upload.array('avatar', 8), (req,res) => {
+  const upload = multer({ 
+    storage: storage,
+    limits : limits
+   })
+
+  router.route('/').post( upload.array('avatar', 20), (req,res) => {
       const rzuty = []
       const image = []
       req.files.forEach( el => el.filename.includes('rzut') ? rzuty.push(el.path) : image.push(el.path) )

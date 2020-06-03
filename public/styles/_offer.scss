@@ -1,0 +1,73 @@
+.gallery-images{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    column-count: 5;
+    column-gap: .6em;
+    animation-name: example;
+    animation-duration: 700ms;
+    background-color: #2522226c;
+}
+@keyframes example {
+    0%   {background-color: #9e92926c}
+    100% {background-color: #2522226c;}
+  }
+.item_1 {
+    display: block;
+    margin: 0 0 .3em;
+    max-width: 100%;
+    -webkit-column-break-inside: avoid;
+    animation-name: example2;
+    animation-duration: 700ms;
+    opacity: 1;
+}
+@keyframes example2 {
+    0%   {opacity: 0}
+    100% {opacity: 1}
+  }
+
+.gallery-rzuty{
+    width: 50%;
+    column-count: 5;
+    column-gap: .6em;
+
+}
+.item_2 {
+    display: block;
+    margin: 0 0 .3em;
+    max-width: 100%;
+    -webkit-column-break-inside: avoid;
+}
+
+.main_ofer_photo{
+    width: 80%;
+    margin: 0 auto;
+        & img{
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+}
+
+.photo_image{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: example;
+    animation-duration: 700ms;
+    background-color: #2522226c;
+        & img{
+            max-height: 80%;
+            max-width: 80%;
+            animation-name: example2;
+            animation-duration: 700ms;
+            opacity: 1;
+        }
+}
