@@ -8,6 +8,7 @@ export default function Oferta(props) {
 
     const [showGallery, setshowGallery] = useState(false)
     const [showPhoto, setshowPhoto] = useState(false)
+    const [whichGallery, setwhichGallery] = useState('')
     const [image_source, setimage_source] = useState('')
     const oferty = useContext(ThemeContext)
     const {oferta} = useParams()
@@ -24,7 +25,8 @@ export default function Oferta(props) {
                     <h1 className="label2" >{ offer_name.nazwa }</h1>
                 </label>
                 <div className="main_ofer_photo" >{  } <img src={offer_name.image[0]} ></img> </div>
-                <button onClick={ () => setshowGallery( prevState => !prevState ) } > GALERIA </button>
+                <button onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('galeria')} } > GALERIA </button>
+                <button onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('rzuty')} } > RZUTY </button>
                 { 
                     showGallery === true 
                     ? 
@@ -38,6 +40,10 @@ export default function Oferta(props) {
                         }> 
                         <button onClick={ () => setshowGallery( prevState => !prevState ) } > X </button>
                         { 
+                        whichGallery === "rzuty" ?
+                        offer_name.rzuty.map( (el,id) => 
+                        <img alt="offer_image" className="item_1" key={id} src={el}></img> ) 
+                        : 
                         offer_name.image.map( (el,id) => 
                         <img alt="offer_image" className="item_1" key={id} src={el}></img> ) 
                         } 
@@ -49,11 +55,8 @@ export default function Oferta(props) {
                     : null
                 }
                 <p>{ offer_name.desc }</p>
-                <div className='gallery-rzuty' >
-                { offer_name.rzuty !== 0 ? 
-                    offer_name.rzuty.map( (el,id) => <img alt="rzut_image" className="item_2" key={id} src={el}></img> ) 
-                : null }
-                </div>
+                <p>{ offer_name.sizes }</p>
+                <p>{ offer_name.prices }</p>
                 </> 
                 }
             </>

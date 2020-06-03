@@ -33,12 +33,16 @@ var limits = {
       const nazwa = req.body.offer_name
       const desc = req.body.desc
       const shortdesc = req.body.shortdesc
+      const sizes = req.body.sizes
+      const prices = req.body.prices
       const data = new Data({
           image,
           rzuty,
           nazwa,
           desc,
-          shortdesc
+          shortdesc,
+          sizes,
+          prices
      })
      data.save()
     res.json("Dodano ofertę!")

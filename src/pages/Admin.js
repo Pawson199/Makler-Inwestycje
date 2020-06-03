@@ -5,6 +5,8 @@ export default function Admin() {
     const [ image, setImage ] = useState([])
     const [ rzuty, setRzuty ] = useState([])
     const [desc, setdesc] = useState('')
+    const [sizes, setsizes] = useState('')
+    const [prices, setprices] = useState('')
     const [shortdesc, setshortdesc] = useState('')
     const [offer_name, setoffer_name] = useState('')
     const [offer_name_delete, setoffer_name_delete] = useState('')
@@ -36,6 +38,12 @@ export default function Admin() {
     const changeshortdesc = (e) => {
         setshortdesc(e.target.value)
     }
+    const changesizes = (e) => {
+        setsizes(e.target.value)
+    }
+    const changeprices = (e) => {
+        setprices(e.target.value)
+    }
     const delete_offer_name = (e) => {
         setoffer_name_delete(e.target.value)
     }
@@ -47,6 +55,8 @@ export default function Admin() {
     forma.append('desc', desc)
     forma.append('offer_name', offer_name)
     forma.append('shortdesc', shortdesc)
+    forma.append('prices', prices)
+    forma.append('sizes', sizes)
 
  const addOffer = (e) => {
         e.preventDefault()
@@ -79,6 +89,10 @@ const deleteOffer = (e) => {
                 <input type="text" name="nazwa" onChange={changeName}  />
                 Krótki opis do miniaturki
                 <input type="text" name="shortdesc"   onChange={changeshortdesc}  />
+                Ceny:
+                <input type="text" name="prices"   onChange={changeprices}  />
+                Rozmiary:
+                <input type="text" name="sizes"   onChange={changesizes}  />
                 Opis oferty
                 <input type="text" name="desc"   onChange={changeDesc}  />
                 <button onClick={addOffer} ></button>
