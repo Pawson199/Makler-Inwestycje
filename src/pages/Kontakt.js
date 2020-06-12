@@ -56,26 +56,14 @@ export default function Kontakt() {
                     <h1>Napisz do nas!</h1>
                     <label>
                         E-mail
-                        <input type="text" placeholder="Email/Numer telefonu" name="email" value={email} onChange={changeIt} />
+                        <input type="text" name="email" value={email} onChange={changeIt} />
                     </label>
                     <label>
                         Treść Wiadomości
-                    <textarea type="text" placeholder="..." name="message" value={message} onChange={changeIt} /> 
+                    <textarea type="text"  name="message" value={message} onChange={changeIt} /> 
                     </label>
                     <button className="message_button" value="Wyślij" > Wyślij </button>
                 </form>
-            </span>
-            <span className="info_contact_container" >
-                <div className="info_contact">
-                    <h1>Godziny Pracy</h1>
-                    <p>Od poniedziałku do piątku <br/> 8:00-17:00 </p>
-                </div>
-                <div className="info_contact">
-                    <h1>Gdzie nas znajdziecie?</h1>
-                    <p>Pomorska 83/85</p>
-                    <p>Lokal nr 409</p>
-                    <p>Łódź</p>
-                </div> 
             </span>
         </>
     )

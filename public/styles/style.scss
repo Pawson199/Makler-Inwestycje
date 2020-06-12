@@ -53,21 +53,61 @@ body{
         @import './home';
         @import './offer';
         min-height: 100%;
+        position: relative;
     }
 
     .footer{
         min-width: 100%;
         min-height: 2em;
         height: auto;
-        @include display-flex(row, center);
-        @include font-size(0.8em, 0.6em);
-        color: white;
+        display: grid;
+        grid-gap: 0.5em;
+        grid-template-columns: repeat( auto-fit , minmax( 10em, 1fr ));
+        color: #3F3D56;
         padding:  1em;
         margin: 0;
-        background-color: #9AC932;
-        text-align: center;
-
+        background-color: rgb(245, 245, 245);
         box-sizing: border-box;
+            & span{
+                text-align: center;
+                    & .span_icon{
+                        @include font-size(1.4em, 1em);
+                        position: relative;
+                        @include display-flex(row,center);
+                        margin: 0;
+                        margin-bottom: 1em;
+                            &::after{
+                                content: "";
+                                width: 3em;
+                                height: 3px;
+                                background-color: #9AC932 ;
+                                position: absolute;
+
+                                bottom: -12px;
+                                margin: auto;
+                            }
+                    }
+                    & p {
+                        @include font-size(0.6em, 0.4em);
+                            & a{
+                                color: #1C82CE;
+                                text-decoration: none;
+                            }
+                    }
+                    & :last-child{
+                        margin-bottom: 0 ;
+                    }
+            }
+            & .footer_logo_container{
+                height: 100%;
+                width: auto;
+                align-items: center;
+                    & img{
+                        min-width: 50%;
+                        max-width: 50%;
+                        height: auto;
+                    }
+            }
     }
 }
 
@@ -79,6 +119,9 @@ body{
   }
 
   @media only screen and (max-width: 901px) {
+    .footer_logo_container{
+        display: none;
+    }
     .menu{
         & img{
             padding-left: 1em;
@@ -90,6 +133,9 @@ body{
 }
 
 @media only screen and (min-width: 901px) {
+    .footer_logo_container{
+        @include display-flex( row, center );
+    }
     .menu{
         & img{
             padding-left: 3em;
