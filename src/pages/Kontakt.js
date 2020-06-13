@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import boyicon from '../images/boyicon.png'
 import girlicon from '../images/girlicon.png'
 
@@ -6,6 +6,9 @@ export default function Kontakt() {
 
     const [message, setMessage] = useState('')
     const [email, setEmail] = useState('')
+    const ref1 = useRef(null)
+
+    const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     const changeIt = (e) => {
         e.target.name === 'message' ?
@@ -15,16 +18,24 @@ export default function Kontakt() {
 
     const sendIt = (e) => {
         e.preventDefault()
-        fetch('/send', {
-            method: "POST",
-            body: JSON.stringify({message, email}),
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-          })
-        .then(response => response.json())
-        .then( json => console.log(json) )
+        if(re.test(email)){
+            fetch('/send', {
+                method: "POST",
+                body: JSON.stringify({message, email}),
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+              })
+            .then(response => response.json())
+            .then( json => console.log(json) )
+            ref1.current.classList.remove('wrong_input')
+            ref1.current.classList.add('good_input')
+        }
+        else{
+            ref1.current.classList.add('wrong_input')
+        }
+    
     }
 
     return (
@@ -52,9 +63,9 @@ export default function Kontakt() {
                 </div> 
             </span>
             <span className="form_holder" >
-                <form onSubmit={sendIt} className="form" >
+                <form onSubmit={sendIt} className="form" ref={ref1} >
                     <h1>Napisz do nas!</h1>
-                    <label>
+                    <label >
                         E-mail
                         <input type="text" name="email" value={email} onChange={changeIt} />
                     </label>
