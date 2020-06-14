@@ -285,21 +285,7 @@ body .container .partners img {
 
 body .container .services {
   height: auto;
-  width: 80%;
   max-width: 120em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -323,14 +309,14 @@ body .container .services p {
 }
 
 body .container .one_of_service {
-  background-color: whitesmoke;
-  min-height: 7em;
+  min-height: 9em;
 }
 
 body .container .one_of_service div {
   width: 2.5em;
   height: 2.5em;
   background-color: #9AC932;
+  border-radius: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -375,6 +361,25 @@ body .container .one_of_service p {
   body .container .partners {
     padding: 0 2em 2em 2em;
   }
+  body .container .services {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .container .services:nth-child(2) {
+    display: none;
+  }
   body .container .services span:nth-child(2) {
     margin-top: 0;
   }
@@ -404,20 +409,47 @@ body .container .one_of_service p {
   body .container .partners {
     padding: 5em 0 5em 0;
   }
+  body .container .services {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background-color: whitesmoke;
+    padding: 0 3em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
   body .container .one_of_service {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 20% 80%;
-        grid-template-columns: 20% 80%;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-    width: 100%;
+    -ms-grid-rows: 40% 60%;
+        grid-template-rows: 40% 60%;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    width: 50%;
+    margin: 1em 0;
   }
   body .container .one_of_service p {
-    text-align: left;
+    text-align: center;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+    max-height: 100%;
+  }
+  body .container .one_of_service:last-child {
+    margin-bottom: 3em;
   }
 }
 
@@ -816,7 +848,7 @@ body .container .good_input::after {
 @media only screen and (min-width: 901px) {
   body .container .info_contact {
     width: 50%;
-    min-height: 12em;
+    min-height: 15em;
   }
   body .container .info_contact_container {
     display: -webkit-box;
@@ -1779,7 +1811,6 @@ body .container .photo_image img {
 body .container .offer_info_container {
   width: 80%;
   margin: auto;
-  margin-top: 2em;
   display: -ms-grid;
   display: grid;
   background-color: whitesmoke;
@@ -2043,6 +2074,103 @@ body .container .gal_and_rzuty div:hover::after {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-area: 2 / 1 / 3 / 2;
+  }
+}
+
+body .container .login_form {
+  background-color: #ffffff;
+  color: #3F3D56;
+  -webkit-box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2);
+  width: 40%;
+  padding: 2em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .container .login_form label {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2em;
+}
+
+body .container .login_form label input {
+  height: 3em;
+  width: 100%;
+  margin-top: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .container .login_form .button_login_holder {
+  width: 8em;
+  height: 3em;
+  position: relative;
+  z-index: 0;
+}
+
+body .container .login_form .button_login_holder button {
+  background-color: #9AC932;
+  color: white;
+  width: 100%;
+  border: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+body .container .login_form .button_login_holder::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  z-index: -1;
+  background-color: #3F3D56;
+}
+
+body .container .login_h1 {
+  margin: 0 0 2em 0;
+  width: 50%;
+  padding: 0 2em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  color: #3F3D56;
+}
+
+@media only screen and (max-width: 900px) {
+  body .container .login_h1 {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .container .login_h1 {
+    font-size: 1.4em;
   }
 }
 

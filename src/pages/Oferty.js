@@ -4,7 +4,7 @@ import {ThemeContext} from '../api_context'
 
 export default function Oferta() {
 
-    const oferty = useContext(ThemeContext)
+    const {oferty} = useContext(ThemeContext)
 
     console.log(oferty)
 

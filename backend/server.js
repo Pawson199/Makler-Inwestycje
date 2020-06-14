@@ -89,6 +89,14 @@ var transporter = nodemailer.createTransport(transport)
   })
 })
 
+app.post('/check_data', (req, res, next) => { 
+    if( req.body.login === process.env.LOGIN && req.body.password === process.env.PASSWORD )
+    {res.send("true")}
+    else{
+      res.send("false")
+    }
+})
+
 const uri = process.env.ATLAS_URI;
 
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }

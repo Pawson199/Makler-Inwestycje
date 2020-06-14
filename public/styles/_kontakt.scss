@@ -203,7 +203,7 @@
 @media only screen and (min-width: 901px) {
     .info_contact{
         width: 50%; 
-        min-height: 12em;
+        min-height: 15em;
     }
     .info_contact_container{
         @include display-flex(row, space-around);

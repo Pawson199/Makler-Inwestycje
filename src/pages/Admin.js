@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import {ThemeContext} from '../api_context'
+import {useHistory} from "react-router-dom";
 
 export default function Admin() {
     
@@ -11,6 +13,9 @@ export default function Admin() {
     const [offer_name, setoffer_name] = useState('')
     const [offer_name_delete, setoffer_name_delete] = useState('')
 
+    const {isLogged} = useContext(ThemeContext)
+    let history = useHistory();
+    
     const changeImage = (e) => {
        const images = e.target.files
        const images_tab = []
@@ -77,6 +82,7 @@ const deleteOffer = (e) => {
 }
 
     return (
+        isLogged ? 
         <>
         <div className="admin_oferty" >
         <label>Dodaj nową ofertę:</label>
@@ -109,6 +115,11 @@ const deleteOffer = (e) => {
        
         </div>
 
+        </>
+        : 
+        <>
+        <p> Musisz być zalogowany. </p>
+            <button onClick={ () =>  history.replace('/admin') } > Zaloguj się </button>
         </>
     )
 }

@@ -11,12 +11,14 @@ export default function Oferta(props) {
     const [showPhoto, setshowPhoto] = useState(false)
     const [whichGallery, setwhichGallery] = useState('')
     const [image_source, setimage_source] = useState('')
-    const oferty = useContext(ThemeContext)
+    const {oferty} = useContext(ThemeContext)
     const {oferta} = useParams()
     const offer_name = oferty.find( el => el.nazwa === oferta )
+    
     return (
         <>
             { 
+            
             oferty.length === 0 ? 
             "LOADING" 
             :
@@ -41,8 +43,8 @@ export default function Oferta(props) {
                         </label>
                 </div>
                     <div className="gal_and_rzuty">
-                        <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('galeria')} } ><img src={gallery_background}></img><p>Galeria</p> </div>
-                        <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('rzuty')} } > <img src={rzuty_background}></img><p>Rzuty</p></div> 
+                        <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('galeria')} } ><img alt="gallery_background" src={gallery_background}></img><p>Galeria</p> </div>
+                        <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('rzuty')} } > <img  alt="rzuty_background"  src={rzuty_background}></img><p>Rzuty</p></div> 
                     </div>
                 
 

@@ -6,6 +6,8 @@ function Apidata(props){
 
     const [oferty, setOferty] = useState([])
 
+    const [isLogged, setisLogged] = useState(false)
+    console.log(isLogged)
     useEffect(
         () => {
      fetch('/data')
@@ -17,8 +19,10 @@ function Apidata(props){
         },[]
     )
 
+    const obj = { oferty, isLogged, setisLogged }
+
    return (
-       <ThemeContext.Provider value={oferty} >
+       <ThemeContext.Provider value={obj} >
            {props.children}
        </ThemeContext.Provider>
    )

@@ -23,10 +23,9 @@ export default function About() {
             <p className="quotation">“</p>
             Działamy na rynku Łódzkich przedsiębiorstw od 2009 roku. Zajmujemy się przede wszystkim
             obsługą rynku nieruchomości oraz inwestycjami w grunty. Nasze usługi są
-            kierowane zarówno do klientów indywidualnych, jak i do firm.
+            kierowane zarówno do klientów indywidualnych, jak i do firm. Głowne sektory naszych działań to:
         </div>
         <div className="services">
-          <p>Zakres naszych usług</p>
         <Service number="1" desc="Pośrednictwo w sprzedaży, kupnie i wynajmie nieruchomości" />
         <Service number="2"  desc="Profesjonalne doradztwo" />
         <Service number="3"  desc="Pośrednictwo w inwestycjach w nieruchomości" />

@@ -9,22 +9,22 @@ import Admin from './pages/Admin'
 import logo from './images/logo-makler.png'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
+import Adminlog from './components/Adminlog'
 
 function App() {
 
   function first_amount_of_slides(){
     if(window.innerWidth < 600 ){ return 1 }
     else if(window.innerWidth > 600 & window.innerWidth < 900 ){ return 2 }
-    else if(window.innerWidth > 900 & window.innerWidth < 1600 ){ return 3 }
-    else if(window.innerWidth > 1600 ){return 4}
+    else if(window.innerWidth > 900  ){ return 3 }
+
 }
 const [slides, setslides] = useState(first_amount_of_slides())
 const change_quentity_of_slides = () => {
 
   if(window.innerWidth < 600 ){ setslides(1) }
   else if(window.innerWidth > 600 & window.innerWidth < 900 ){setslides(2)}
-  else if(window.innerWidth > 900 & window.innerWidth < 1600 ){setslides(3)}
-  else if(window.innerWidth > 1600 ){setslides(4)}
+  else if(window.innerWidth > 900  ){setslides(3)}
    }
  useEffect(() => {
    window.addEventListener('resize', change_quentity_of_slides )
@@ -47,7 +47,8 @@ const change_quentity_of_slides = () => {
         <Route exact path="/oferta"> <Oferty/> </Route>
         <Route path="/about"> <About/> </Route>
         <Route path="/kontakt"> <Kontakt/> </Route>
-        <Route path="/admin"> <Admin/> </Route>
+        <Route path="/admin_logged"> <Admin/> </Route>
+        <Route path="/admin"> <Adminlog/> </Route>
         <Route path="/oferta/:oferta"> <Oferta/> </Route>
     </Switch>
    </div>
