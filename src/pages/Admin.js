@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import {ThemeContext} from '../api_context'
 import {useHistory} from "react-router-dom";
 
@@ -13,9 +13,9 @@ export default function Admin() {
     const [offer_name, setoffer_name] = useState('')
     const [offer_name_delete, setoffer_name_delete] = useState('')
 
-    const {isLogged} = useContext(ThemeContext)
+    const {isLogged, isLogged_inStorage, setisLogged_inStorage} = useContext(ThemeContext)
     let history = useHistory();
-    
+
     const changeImage = (e) => {
        const images = e.target.files
        const images_tab = []
@@ -80,9 +80,33 @@ const deleteOffer = (e) => {
     .then( response => response.json() )
     .then( json => console.log(json) )
 }
+    
+
+useEffect(() => {
+    const options = {
+        method: "POST",
+        body: JSON.stringify({ password : localStorage.password, login : localStorage.login}),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }
+    
+    fetch('http://localhost:5000/islogged', options)
+    .then( response => response.text() )
+    .then( 
+        res => {
+            if( res === "true" ){
+                setisLogged_inStorage(true)
+                history.replace('/admin_logged');
+            }
+            else{ setisLogged_inStorage(false) }
+        }
+     )
+    }, [])
 
     return (
-        isLogged ? 
+        isLogged || isLogged_inStorage ? 
         <>
         <div className="admin_oferty" >
         <label>Dodaj nową ofertę:</label>

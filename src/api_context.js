@@ -5,9 +5,9 @@ const ThemeContext = createContext()
 function Apidata(props){
 
     const [oferty, setOferty] = useState([])
-
+    const [isLogged_inStorage, setisLogged_inStorage] = useState(false)
     const [isLogged, setisLogged] = useState(false)
-    console.log(isLogged)
+
     useEffect(
         () => {
      fetch('/data')
@@ -19,7 +19,7 @@ function Apidata(props){
         },[]
     )
 
-    const obj = { oferty, isLogged, setisLogged }
+    const obj = { oferty, isLogged, setisLogged, isLogged_inStorage, setisLogged_inStorage }
 
    return (
        <ThemeContext.Provider value={obj} >

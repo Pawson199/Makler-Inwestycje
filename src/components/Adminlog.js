@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import {ThemeContext} from '../api_context'
 import {useHistory} from "react-router-dom";
 
@@ -7,7 +7,7 @@ export default function Admin_log() {
     const [login, setlogin] = useState('')
     const [password, setpassword] = useState('')
 
-    const {setisLogged} = useContext(ThemeContext)
+    const {setisLogged, setisLogged_inStorage} = useContext(ThemeContext)
     
     let history = useHistory();
 
@@ -36,6 +36,8 @@ export default function Admin_log() {
                     if( json === "true" ){
                         setisLogged( true );
                         history.replace('/admin_logged');
+                        localStorage.setItem('login', login)
+                        localStorage.setItem('password', password)
                     }  
                     else{
                         console.log('eeh')
@@ -44,6 +46,29 @@ export default function Admin_log() {
             )
 
      }
+
+     useEffect(() => {
+        const options = {
+            method: "POST",
+            body: JSON.stringify({ password : localStorage.password, login : localStorage.login}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }
+        
+        fetch('http://localhost:5000/islogged', options)
+        .then( response => response.text() )
+        .then( 
+            res => {
+                if( res === "true" ){
+                    setisLogged_inStorage(true)
+                    history.replace('/admin_logged');
+                }
+                else{ setisLogged_inStorage(false) }
+            }
+         )
+        }, [])
 
     return (
         <>
