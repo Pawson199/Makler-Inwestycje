@@ -12,6 +12,8 @@ export default function Admin() {
     const [shortdesc, setshortdesc] = useState('')
     const [offer_name, setoffer_name] = useState('')
     const [offer_name_delete, setoffer_name_delete] = useState('')
+    const [lon, setlon] = useState(0)
+    const [lat, setlat] = useState(0)
 
     const {isLogged, isLogged_inStorage, setisLogged_inStorage} = useContext(ThemeContext)
     let history = useHistory();
@@ -49,6 +51,12 @@ export default function Admin() {
     const changeprices = (e) => {
         setprices(e.target.value)
     }
+    const changelat = (e) => {
+        setlat(e.target.value)
+    }
+    const changelon = (e) => {
+        setlon(e.target.value)
+    }
     const delete_offer_name = (e) => {
         setoffer_name_delete(e.target.value)
     }
@@ -62,6 +70,8 @@ export default function Admin() {
     forma.append('shortdesc', shortdesc)
     forma.append('prices', prices)
     forma.append('sizes', sizes)
+    forma.append('lon', lon)
+    forma.append('lat', lat)
 
  const addOffer = (e) => {
         e.preventDefault()
@@ -125,6 +135,10 @@ useEffect(() => {
                 <input type="text" name="sizes"   onChange={changesizes}  />
                 Opis oferty
                 <input type="text" name="desc"   onChange={changeDesc}  />
+                Długość geograficzna oferty
+                <input type="text" name="lon"   onChange={changelon}  />
+                Szerokość gograficzna oferty
+                <input type="text" name="lat"   onChange={changelat}  />
                 <button onClick={addOffer} ></button>
             </form>
        

@@ -1,8 +1,7 @@
 import React, {useContext, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {ThemeContext} from '../api_context'
-import gallery_background from '../images/gallery_background.jpg'
-import rzuty_background from '../images/rzut_background.jpg'
+import { Map, Marker, TileLayer } from 'react-leaflet'
 
 
 export default function Oferta(props) {
@@ -14,12 +13,12 @@ export default function Oferta(props) {
     const {oferty} = useContext(ThemeContext)
     const {oferta} = useParams()
     const offer_name = oferty.find( el => el.nazwa === oferta )
-    
+
     return (
         <>
             { 
             
-            oferty.length === 0 ? 
+            oferty.length === 0 ?  
             "LOADING" 
             :
                 <> 
@@ -43,8 +42,19 @@ export default function Oferta(props) {
                         </label>
                 </div>
                     <div className="gal_and_rzuty">
-                        <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('galeria')} } ><img alt="gallery_background" src={gallery_background}></img><p>Galeria</p> </div>
-                        <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('rzuty')} } > <img  alt="rzuty_background"  src={rzuty_background}></img><p>Rzuty</p></div> 
+                            <Map center={[offer_name.lat, offer_name.lon]} zoom={10} zoomControl={false} className="
+                            mapa" >
+                                <TileLayer
+                                url="https://api.mapbox.com/styles/v1/starnaw2/cka1gtpne1rdm1ippw49w289j/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3Rhcm5hdzIiLCJhIjoiY2thMWZxOHdiMDAxdTNkb2N3NHIwZTY3OSJ9.M5JBQc0BGcrg3uj8YgpMQw"
+                                attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
+                                />
+                                <Marker position={[offer_name.lat, offer_name.lon]}>
+                                </Marker>
+                            </Map>
+                            <span>
+                                <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('galeria')} } > Galeria </div>
+                                <div onClick={ () => {setshowGallery( prevState => !prevState ); setwhichGallery('rzuty')} } > Rzuty </div> 
+                            </span>
                     </div>
                 
 

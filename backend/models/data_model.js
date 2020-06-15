@@ -10,7 +10,9 @@ const dataSchema = new Schema({
     desc: String,
     shortdesc: String,
     sizes: String,
-    prices: String
+    prices: String,
+    lat : String,
+    lon : String
   });
 
   const Data = mongoose.model('offer', dataSchema);

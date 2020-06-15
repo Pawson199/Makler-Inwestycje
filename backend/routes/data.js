@@ -35,6 +35,8 @@ var limits = {
       const shortdesc = req.body.shortdesc
       const sizes = req.body.sizes
       const prices = req.body.prices
+      const lon = req.body.lon
+      const lat = req.body.lat
       const data = new Data({
           image,
           rzuty,
@@ -42,7 +44,9 @@ var limits = {
           desc,
           shortdesc,
           sizes,
-          prices
+          prices,
+          lon,
+          lat
      })
      data.save()
     res.json("Dodano ofertę!")

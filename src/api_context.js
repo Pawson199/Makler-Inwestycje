@@ -10,7 +10,7 @@ function Apidata(props){
 
     useEffect(
         () => {
-     fetch('/data')
+     fetch('http://localhost:5000/data')
     .then( response => response.json() )
     .then(json => setOferty( json ) )
     .catch((error) => {
