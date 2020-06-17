@@ -2,12 +2,12 @@
 
 ## Tech stack:
 
- • React with React Router - main,
- • React-transition-group for routes animating,
- • Glider as a external libary for slider in home page,
- • Leafleet as a external libary for map in home page,
- • Node & Express for server with API, 
- • Multer for images handling, 
- • Mongodb as a database,
+ • React with React Router - main, <br/> 
+ • React-transition-group for routes animating, <br/>
+ • Glider as a external libary for slider in home page, <br/>
+ • Leafleet as a external libary for map in home page, <br/>
+ • Node & Express for server with API, <br/>
+ • Multer for images handling, <br/>
+ • Mongodb as a database, <br/>
  • Nodemailer for contact form
 
