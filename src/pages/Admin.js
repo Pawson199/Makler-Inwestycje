@@ -102,7 +102,7 @@ useEffect(() => {
         }
     }
     
-    fetch('http://localhost:5000/islogged', options)
+    fetch('/islogged', options)
     .then( response => response.text() )
     .then( 
         res => {

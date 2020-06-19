@@ -16,7 +16,7 @@
 
 .quotation{
     position: absolute;
-    top: -0.5em;
+    top: -0.42em;
     right: 0;
     font-size: 6em;
     margin: 0;
@@ -32,8 +32,8 @@
     row-gap: 1em;
     box-sizing: border-box;
         & img{
-            max-width: 100%;
-            align-self: center;
+            justify-self: center;
+            max-width: 90%;
         }
 }
 
@@ -63,6 +63,8 @@
     }
     & p{ 
         @include font-size(1.4em, 1em);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 200;
         color:#3F3D56;
         margin: 0;
         padding: 0 1em;
@@ -72,9 +74,10 @@
 @media only screen and (max-width: 901px) {
     .about_us{
         padding: 2em;
+        margin-bottom: 1.5em;
     }
     .partners{
-        padding: 0 2em 2em 2em;
+        padding: 0 2em 3em 2em;
     }
     .services{
         width: 80%;
@@ -82,6 +85,9 @@
          &:nth-child(2){
             display: none;
          }
+         span:nth-child(6){
+            display: none;
+        }
     }
     .services span:nth-child(2) {
             margin-top: 0;
@@ -109,22 +115,26 @@
     }
     .services{
         width: 80%;
-        @include display-flex(row, center);
+        @include display-flex(row, flex-start);
         flex-wrap: wrap;
-        background-color: rgb(245, 245, 245);
         padding: 0 3em;
         box-sizing: border-box;
+        padding-top: 4em;
+        background-color: white;
+            span:nth-child(6){
+                & div{background-color: white;}
+            }
     }
     .one_of_service{
         display: grid;
         grid-template-rows: 40% 60%;
         grid-template-columns: 1fr;
-        width: 50%;
-        margin: 1em 0 ;
+        width: 30%;
+        margin: 2em auto ;
         & p{
             text-align: center;
             align-self: center;
-            max-height: 100% ;
+            max-height: 100%;
         }
         &:last-child {
             margin-bottom: 3em;

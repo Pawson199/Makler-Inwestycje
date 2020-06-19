@@ -31,6 +31,7 @@ export default function About() {
         <Service number="3"  desc="Pośrednictwo w inwestycjach w nieruchomości" />
         <Service number="4"  desc="Pośrednictwo finansowe" /> 
         <Service number="5"  desc="Pośrednictwo w kupnie nowoczesnych domów pasywnych" />
+        <Service number=""  desc="" />
         </div>
         <span className="partners">
             <img alt="logo_leroy" src={leroy}/>

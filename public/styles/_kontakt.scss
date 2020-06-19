@@ -53,6 +53,14 @@
             padding: 0 0.5em;
             box-sizing: border-box;
         }
+
+        & p:nth-child(6) { 
+            font-family: 'Roboto', sans-serif;
+          }
+          & p:nth-child(4) { 
+            font-family: 'Roboto', sans-serif;
+          }
+
         & img{
             position: absolute;
             top: -4em;
@@ -126,6 +134,14 @@
                             background-color: #3F3D56;
                             position: absolute;
                             z-index: -5;
+                    }
+                    &:hover{
+                        top: -1px;
+                         left: -1px;
+                        &::before{
+                         top: -1px;
+                         left: -1px;
+                        } 
                     }
         }
         .message_button:active {

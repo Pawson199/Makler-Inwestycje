@@ -62,7 +62,6 @@ body{
         min-height: 2em;
         height: auto;
         display: grid;
-        grid-gap: 0.5em;
         grid-template-columns: repeat( auto-fit , minmax( 10em, 1fr ));
         color: #3F3D56;
         padding:  1em;
@@ -90,6 +89,7 @@ body{
                     }
                     & p {
                         @include font-size(0.7em, 0.6em);
+                        font-weight: 300;
                             & a{
                                 color: #1C82CE;
                                 text-decoration: none;
@@ -131,6 +131,9 @@ body{
             padding-right: 1em;
         }
     }
+    .footer{
+        grid-gap: 1.5em;
+    }
 }
 
 @media only screen and (min-width: 901px) {
@@ -144,6 +147,10 @@ body{
         & ul{
             padding-right: 3em;
         }
+    }
+
+    .footer{
+        grid-gap: 0.5em;
     }
 }
 

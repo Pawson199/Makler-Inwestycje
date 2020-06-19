@@ -29,7 +29,7 @@ export default function Admin_log() {
             }
         }
         
-        fetch('http://localhost:5000/check_data', options)
+        fetch('/check_data', options)
         .then( response => response.text() )
         .then( json => 
                 {
@@ -57,7 +57,7 @@ export default function Admin_log() {
             }
         }
         
-        fetch('http://localhost:5000/islogged', options)
+        fetch('/islogged', options)
         .then( response => response.text() )
         .then( 
             res => {

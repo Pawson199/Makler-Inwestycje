@@ -1,7 +1,11 @@
 import React from 'react'
 import logo from '../images/logo-makler.png'
+import {useHistory} from "react-router-dom";
 
 export default function Footer() {
+
+    let history = useHistory();
+
     return (
         <h2 className="footer" >
             <span>
@@ -18,7 +22,7 @@ export default function Footer() {
             <span>
             <span className="span_icon"><i className="ri-mail-line"></i></span>
                 <p> biuro@makler-inwestycje.pl </p>
-                <p><a href="#"> napisz do nas {`>>`} </a> </p> 
+                <p><a  onClick={ () =>  history.replace('/kontakt') } > napisz do nas {`>>`} </a> </p> 
              </span>
              
              <div className="footer_logo_container" >
