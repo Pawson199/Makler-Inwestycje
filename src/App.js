@@ -10,6 +10,7 @@ import logo from './images/logo-makler.png'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
 import Adminlog from './components/Adminlog'
+import { AnimatePresence } from "framer-motion"
 
 function App() {
 
@@ -42,7 +43,8 @@ const change_quentity_of_slides = () => {
    </div>
 
    <div className='container'>
-    <Switch>
+     <AnimatePresence>
+      <Switch>
         <Route exact path="/"> <Home slides={slides}/> </Route>
         <Route exact path="/oferta"> <Oferty/> </Route>
         <Route path="/about"> <About/> </Route>
@@ -50,11 +52,11 @@ const change_quentity_of_slides = () => {
         <Route path="/admin_logged"> <Admin/> </Route>
         <Route path="/admin"> <Adminlog/> </Route>
         <Route path="/oferta/:oferta"> <Oferta/> </Route>
-    </Switch>
+    </Switch> 
+     </AnimatePresence>
    </div>
 
    <Footer/>
-
    </>
   )
 

@@ -1,12 +1,15 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useContext} from 'react'
 import boyicon from '../images/boyicon.png'
 import girlicon from '../images/girlicon.png'
+import {ThemeContext} from '../api_context'
+import { motion } from "framer-motion"
 
 export default function Kontakt() {
 
     const [message, setMessage] = useState('')
     const [email, setEmail] = useState('')
     const ref1 = useRef(null)
+    const {pageAnimation} = useContext(ThemeContext)
 
     const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -39,7 +42,12 @@ export default function Kontakt() {
     }
 
     return (
-        <>
+        <motion.div className="wrapper"
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageAnimation}
+        >
             <label className="label">
                 <h1 className="label1" >Kontakt</h1>
                 <h1 className="label2" >Kontakt</h1>
@@ -76,6 +84,6 @@ export default function Kontakt() {
                     <button className="message_button" value="Wyślij" > Wyślij </button>
                 </form>
             </span>
-        </>
+        </motion.div>
     )
 }

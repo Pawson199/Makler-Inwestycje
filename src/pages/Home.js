@@ -1,18 +1,26 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import background_city from '../images/zmianka.svg'
 import background_offers from '../images/home_choosing.svg'
 import Slider from '../components/Slider'
 import { Map, Marker, TileLayer } from 'react-leaflet'
 import {useHistory} from "react-router-dom";
+import { motion } from "framer-motion"
+import {ThemeContext} from '../api_context'
 
 export default function Home(props) {
 
     let history = useHistory();
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    const {pageAnimation} = useContext(ThemeContext)
 
     return (
-        <>
+        <motion.div className="wrapper"
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={pageAnimation}   
+        >
                 <span className="home_desc">
                     <div className="desc_holder" >
                         <h1>ZAOSZCZĘDŹ CZAS <br/> I PIENIĄDZE</h1>
@@ -50,6 +58,6 @@ export default function Home(props) {
                         </Marker>
                     </Map>
                 </span>
-        </>
+        </motion.div>
     )
 }

@@ -8,6 +8,15 @@ function Apidata(props){
     const [isLogged_inStorage, setisLogged_inStorage] = useState(false)
     const [isLogged, setisLogged] = useState(false)
 
+    const pageAnimation = {
+        in: {
+            opacity: 1
+        },
+        out: {
+            opacity: 0
+        }
+    }
+
     useEffect(
         () => {
      fetch('/data')
@@ -19,7 +28,7 @@ function Apidata(props){
         },[]
     )
 
-    const obj = { oferty, isLogged, setisLogged, isLogged_inStorage, setisLogged_inStorage }
+    const obj = { oferty, isLogged, setisLogged, isLogged_inStorage, setisLogged_inStorage, pageAnimation }
 
    return (
        <ThemeContext.Provider value={obj} >

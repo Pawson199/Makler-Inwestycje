@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import {ThemeContext} from '../api_context'
 import { Map, Marker, TileLayer } from 'react-leaflet'
+import { motion } from "framer-motion"
 
 
 export default function Oferta(props) {
@@ -10,12 +11,16 @@ export default function Oferta(props) {
     const [showPhoto, setshowPhoto] = useState(false)
     const [whichGallery, setwhichGallery] = useState('')
     const [image_source, setimage_source] = useState('')
-    const {oferty} = useContext(ThemeContext)
+    const {oferty, pageAnimation} = useContext(ThemeContext)
     const {oferta} = useParams()
     const offer_name = oferty.find( el => el.nazwa === oferta )
 
     return (
-        <>
+        <motion.div className="wrapper"
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageAnimation}>
             { 
             
             oferty.length === 0 ?  
@@ -94,7 +99,7 @@ export default function Oferta(props) {
 
                 </> 
                 }
-            </>
+            </motion.div>
         
     )
 }

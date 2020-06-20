@@ -46,7 +46,6 @@ body{
     }
 
     .container{
-        @include display-flex(column, center);
         @import './about';
         @import './kontakt';
         @import './oferta';
@@ -54,7 +53,11 @@ body{
         @import './offer';
         @import './login_page';
         min-height: 100%;
-        position: relative;
+            & .wrapper{
+                @include display-flex(column, center);
+                min-height: 100%;
+                position: relative;
+            }
     }
 
     .footer{
