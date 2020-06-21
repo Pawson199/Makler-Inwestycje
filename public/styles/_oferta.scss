@@ -9,7 +9,9 @@
 .single_offer{
     border-bottom: 0.3em solid #9AC932;
     color: #3F3D56;
-    @include display-flex(column, space-between);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color:white;
     box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.2);
     margin: 1em;

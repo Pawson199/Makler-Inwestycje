@@ -2,7 +2,7 @@ import React, {useState, useRef, useContext} from 'react'
 import boyicon from '../images/boyicon.png'
 import girlicon from '../images/girlicon.png'
 import {ThemeContext} from '../api_context'
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 
 export default function Kontakt() {
 
@@ -11,7 +11,7 @@ export default function Kontakt() {
     const ref1 = useRef(null)
     const {pageAnimation} = useContext(ThemeContext)
 
-    const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const re = /\S+@\S+\.\S+/;
 
     const changeIt = (e) => {
         e.target.name === 'message' ?

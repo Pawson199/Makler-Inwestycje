@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import {ThemeContext} from '../api_context'
 import { Map, Marker, TileLayer } from 'react-leaflet'
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 
 
 export default function Oferta(props) {
@@ -11,9 +11,19 @@ export default function Oferta(props) {
     const [showPhoto, setshowPhoto] = useState(false)
     const [whichGallery, setwhichGallery] = useState('')
     const [image_source, setimage_source] = useState('')
-    const {oferty, pageAnimation} = useContext(ThemeContext)
+    const [data, setData] = useState([])
+    const {givemedata, pageAnimation} = useContext(ThemeContext)
     const {oferta} = useParams()
-    const offer_name = oferty.find( el => el.nazwa === oferta )
+    const offer_name = data.find( el => el.nazwa === oferta )
+
+    useEffect( () => {
+        async function lee(){
+      const result = await givemedata()
+      setData( result )
+    } 
+    lee()
+    }
+    ,[] )
 
     return (
         <motion.div className="wrapper"
@@ -23,7 +33,7 @@ export default function Oferta(props) {
         variants={pageAnimation}>
             { 
             
-            oferty.length === 0 ?  
+            data.length === 0 ?  
             "LOADING" 
             :
                 <> 

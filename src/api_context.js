@@ -1,10 +1,9 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState } from 'react'
 
 const ThemeContext = createContext()
 
 function Apidata(props){
 
-    const [oferty, setOferty] = useState([])
     const [isLogged_inStorage, setisLogged_inStorage] = useState(false)
     const [isLogged, setisLogged] = useState(false)
 
@@ -17,18 +16,18 @@ function Apidata(props){
         }
     }
 
-    useEffect(
-        () => {
-     fetch('/data')
-    .then( response => response.json() )
-    .then(json => setOferty( json ) )
-    .catch((error) => {
-      console.log(error);
-   })   
-        },[]
-    )
+    const givemedata = () => {
+       return fetch('http://localhost:5000/data')
+       .then( response => response.json() )
+       .then(json => json )
+       .catch((error) => {
+         console.log(error);
+      })   
 
-    const obj = { oferty, isLogged, setisLogged, isLogged_inStorage, setisLogged_inStorage, pageAnimation }
+       }
+
+
+    const obj = { givemedata, isLogged, setisLogged, isLogged_inStorage, setisLogged_inStorage, pageAnimation }
 
    return (
        <ThemeContext.Provider value={obj} >

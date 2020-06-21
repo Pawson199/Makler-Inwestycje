@@ -1,15 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import Offer from '../components/Offer'
 import {ThemeContext} from '../api_context'
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 
 export default function Oferta() {
 
-    const {oferty, pageAnimation} = useContext(ThemeContext)
+    const {givemedata, pageAnimation} = useContext(ThemeContext)
+    const [ data, setData ] = useState([])
 
-    console.log(oferty)
+    useEffect( () => {
+        async function lee(){
+      const result = await givemedata()
+      setData( result )
+    } 
+    lee()
+    }
+,[] )
 
-    let oferty_map = oferty.map( (el,id) => <Offer key={id} desc={el.shortdesc} photos={el.image} name={el.nazwa} /> )
+
+    
+    let oferty_map = data.map( (el,id) => <Offer key={id} desc={el.shortdesc} photos={el.image} name={el.nazwa} /> )
 
     return (
         <motion.div className="wrapper"

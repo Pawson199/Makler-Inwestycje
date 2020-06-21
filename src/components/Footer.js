@@ -22,7 +22,7 @@ export default function Footer() {
             <span>
             <span className="span_icon"><i className="ri-mail-line"></i></span>
                 <p> biuro@makler-inwestycje.pl </p>
-                <p><a  onClick={ () =>  history.replace('/kontakt') } > napisz do nas {`>>`} </a> </p> 
+                <p><a href="/kontakt" onClick={ () =>  history.replace('/kontakt') } > napisz do nas {`>>`} </a> </p> 
              </span>
              
              <div className="footer_logo_container" >

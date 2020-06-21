@@ -11,8 +11,11 @@ import Menu from './components/Menu'
 import Footer from './components/Footer'
 import Adminlog from './components/Adminlog'
 import { AnimatePresence } from "framer-motion"
+import {useHistory} from "react-router-dom";
 
 function App() {
+
+  let history = useHistory();
 
   function first_amount_of_slides(){
     if(window.innerWidth < 600 ){ return 1 }
@@ -38,7 +41,7 @@ const change_quentity_of_slides = () => {
     <>
 
    <div className='menu' >
-    <img alt="logo" src={logo}/>
+    <img onClick={ () =>  history.replace('/')} alt="logo" src={logo}/>
     <Menu/>
    </div>
 

@@ -4,7 +4,7 @@ import background_offers from '../images/home_choosing.svg'
 import Slider from '../components/Slider'
 import { Map, Marker, TileLayer } from 'react-leaflet'
 import {useHistory} from "react-router-dom";
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 import {ThemeContext} from '../api_context'
 
 export default function Home(props) {

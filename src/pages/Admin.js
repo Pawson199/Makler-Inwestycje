@@ -16,7 +16,7 @@ export default function Admin() {
     const [lat, setlat] = useState(0)
 
     const {isLogged, isLogged_inStorage, setisLogged_inStorage} = useContext(ThemeContext)
-    let history = useHistory();
+    const history1 = useHistory();
 
     const changeImage = (e) => {
        const images = e.target.files
@@ -108,12 +108,12 @@ useEffect(() => {
         res => {
             if( res === "true" ){
                 setisLogged_inStorage(true)
-                history.replace('/admin_logged');
+                history1.replace('/admin_logged');
             }
             else{ setisLogged_inStorage(false) }
         }
      )
-    }, [])
+    }, [setisLogged_inStorage, history1])
 
     return (
         isLogged || isLogged_inStorage ? 
@@ -157,7 +157,7 @@ useEffect(() => {
         : 
         <>
         <p> Musisz być zalogowany. </p>
-            <button onClick={ () =>  history.replace('/admin') } > Zaloguj się </button>
+            <button onClick={ () =>  history1.replace('/admin') } > Zaloguj się </button>
         </>
     )
 }

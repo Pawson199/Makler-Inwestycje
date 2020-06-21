@@ -10,4 +10,4 @@
  • Multer for images handling in CMS form(Admin page), <br/>
  • Mongodb as a database, <br/>
  • Nodemailer for contact form
-
+ • Framer Motion + React Router for pages transition

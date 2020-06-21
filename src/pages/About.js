@@ -4,7 +4,7 @@ import nobo from '../images/loga/nobo.png'
 import profit from '../images/loga/profit.png'
 import constrado from '../images/loga/constrado.png'
 import budem from '../images/loga/budemlogo.png'
-import { motion } from "framer-motion"
+import {motion} from "framer-motion"
 import {ThemeContext} from '../api_context'
 
 export default function About() {

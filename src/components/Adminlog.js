@@ -68,10 +68,10 @@ export default function Admin_log() {
                 else{ setisLogged_inStorage(false) }
             }
          )
-        }, [])
+        }, [setisLogged_inStorage, history])
 
     return (
-        <>
+        <div className="wrapper">
         <h1 className="login_h1" > Zaloguj się, <br/> aby otworzyć panel zarządzania treścią. </h1>
         <div className="login_form" >
             <label>
@@ -86,6 +86,6 @@ export default function Admin_log() {
              <button onClick={check_data} > Zaloguj </button>   
             </div>
         </div>
-        </>
+        </div>
     )
 }
