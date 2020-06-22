@@ -102,7 +102,7 @@ useEffect(() => {
         }
     }
     
-    fetch('/islogged', options)
+    fetch('http://localhots:5000/islogged', options)
     .then( response => response.text() )
     .then( 
         res => {
@@ -117,43 +117,63 @@ useEffect(() => {
 
     return (
         isLogged || isLogged_inStorage ? 
-        <>
+        <div className="adminowa">
         <div className="admin_oferty" >
-        <label>Dodaj nową ofertę:</label>
-            <form   >
-                Zdjęcia ofert
-                <input type="file" name="avatar" multiple="multiple" onChange={changeImage} />
-                Rzuty(jeżeli są)
-                <input type="file" name="avatar" multiple="multiple" onChange={changeRzuty} />
-                Nazwa oferty
-                <input type="text" name="nazwa" onChange={changeName}  />
-                Krótki opis do miniaturki
-                <input type="text" name="shortdesc"   onChange={changeshortdesc}  />
-                Ceny:
-                <input type="text" name="prices"   onChange={changeprices}  />
-                Rozmiary:
-                <input type="text" name="sizes"   onChange={changesizes}  />
-                Opis oferty
-                <input type="text" name="desc"   onChange={changeDesc}  />
-                Długość geograficzna oferty
-                <input type="text" name="lon"   onChange={changelon}  />
-                Szerokość gograficzna oferty
-                <input type="text" name="lat"   onChange={changelat}  />
-                <button onClick={addOffer} ></button>
+        <h1>Dodaj nową ofertę:</h1>
+            <form >
+                <div className="photo_inputs">
+                    <label>
+                        <p> Zdjęcia ofert</p>
+                        <input type="file" name="avatar" multiple="multiple" onChange={changeImage} />  
+                    </label>
+                    <label>
+                        <p> Rzuty(jeżeli są)</p>
+                        <input type="file" name="avatar" multiple="multiple" onChange={changeRzuty} />  
+                    </label>
+                </div>
+                <label>
+                <p> Nazwa oferty</p>
+                    <input type="text" name="nazwa" onChange={changeName}  />
+                </label>
+               <label>
+                   <p> Krótki opis do miniaturki</p>
+                    <textarea type="text" name="shortdesc"   onChange={changeshortdesc}  />  
+               </label>
+                <label>
+                   <p> Ceny:</p>
+                    <input type="text" name="prices"   onChange={changeprices}  /> 
+                </label>
+                <label>
+                   <p> Rozmiary:</p>
+                    <input type="text" name="sizes"   onChange={changesizes}  />  
+                </label>
+                <label>
+                   <p> Opis oferty</p>
+                    <textarea type="text" name="desc"   onChange={changeDesc}  />
+                </label>
+                <label>
+                    <p>Długość geograficzna oferty</p>
+                    <input type="text" name="lon"   onChange={changelon}  />  
+                </label>
+                <label>
+                   <p> Szerokość gograficzna oferty</p>
+                    <input type="text" name="lat"   onChange={changelat}  />  
+                </label>
+                <button className="admin_button" onClick={addOffer} > Zapisz ofertę </button>
             </form>
        
         </div>
         <br/>
-        <div onSubmit={deleteOffer} >
+        <div className="deleting_offer" onSubmit={deleteOffer} >
+            <h1> Usuwanie ofert </h1>
             <form>
-                <label>Usun ofertę o nazwie:</label>
+                <p>Usun ofertę o nazwie:</p>
                 <input type="text" name="nazwa" value={offer_name_delete} onChange={delete_offer_name}  />
-                <button></button>
+                <button> Usuń ofertę </button>
             </form>
-       
         </div>
 
-        </>
+        </div>
         : 
         <>
         <p> Musisz być zalogowany. </p>

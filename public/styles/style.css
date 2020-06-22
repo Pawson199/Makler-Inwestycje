@@ -199,6 +199,16 @@ body .menu .cross span::after {
 
 body .container {
   min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body .container .about_us {
@@ -1181,28 +1191,6 @@ body .container .home_image img {
   max-height: 100%;
 }
 
-body .container .offers_h1 {
-  width: 100%;
-}
-
-body .container .offers_h1 h1 {
-  color: #1C82CE;
-  margin: 0;
-  text-align: center;
-}
-
-@media only screen and (max-width: 900px) {
-  body .container .offers_h1 h1 {
-    font-size: 1.8em;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  body .container .offers_h1 h1 {
-    font-size: 3em;
-  }
-}
-
 body .container .offers {
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -1425,25 +1413,6 @@ body .container .location_photo {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  body .container .offers_h1 {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 3em 2em 0 2em;
-    margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
   body .container .home_image {
     height: auto;
     max-height: 50%;
@@ -1456,6 +1425,7 @@ body .container .location_photo {
   body .container .offers {
     height: 100%;
     padding: 0;
+    margin-top: 2em;
   }
   body .container .offers_background {
     display: none;
@@ -1554,7 +1524,7 @@ body .container .location_photo {
   }
   body .container .offers {
     height: auto;
-    padding: 0 0 5em 0;
+    padding: 5em 0 5em 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
@@ -2176,6 +2146,136 @@ body .container .login_h1 {
   }
 }
 
+body .container .adminowa {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+
+body .container .adminowa .admin_oferty form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+body .container .adminowa .admin_oferty form label {
+  margin: 1em 0;
+  width: 100%;
+}
+
+body .container .adminowa .admin_oferty form label p {
+  width: 100%;
+}
+
+body .container .adminowa .admin_oferty form label input {
+  width: 100%;
+}
+
+body .container .adminowa .admin_oferty form label textarea {
+  height: 7em;
+  width: 100%;
+}
+
+body .container .adminowa .admin_oferty form .admin_button {
+  width: 8em;
+  height: 4em;
+  margin: auto;
+}
+
+body .container .adminowa .admin_oferty form .photo_inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+body .container .adminowa .deleting_offer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+body .container .adminowa .deleting_offer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin: 1em 0 0 0;
+}
+
+body .container .adminowa .deleting_offer form input {
+  width: 100%;
+}
+
+body .container .adminowa .deleting_offer form label {
+  width: 100%;
+}
+
+body .container .adminowa .deleting_offer form button {
+  width: 8em;
+  height: 4em;
+  margin: 1em auto;
+}
+
 body .container .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2190,7 +2290,6 @@ body .container .wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100%;
   position: relative;
 }
 

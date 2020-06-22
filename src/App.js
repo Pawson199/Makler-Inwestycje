@@ -38,14 +38,14 @@ const change_quentity_of_slides = () => {
 }, [])
 
   return (
-    <>
+  
 
+
+   <div className='container'>
    <div className='menu' >
     <img onClick={ () =>  history.replace('/')} alt="logo" src={logo}/>
     <Menu/>
    </div>
-
-   <div className='container'>
      <AnimatePresence>
       <Switch>
         <Route exact path="/"> <Home slides={slides}/> </Route>
@@ -57,10 +57,10 @@ const change_quentity_of_slides = () => {
         <Route path="/oferta/:oferta"> <Oferta/> </Route>
     </Switch> 
      </AnimatePresence>
+     
+   <Footer/>
    </div>
 
-   <Footer/>
-   </>
   )
 
 }

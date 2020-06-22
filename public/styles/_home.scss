@@ -91,17 +91,6 @@
   max-height: 100%;
 }
 
-.offers_h1{
-    width: 100%;
-        & h1{
-            @include font-size(3em,1.8em);
-            color: #1C82CE;
-            margin: 0;
-            text-align: center;
-        }
-    
-}
-
 .offers{
     width: 100%;
     box-sizing: border-box;
@@ -235,12 +224,6 @@
                 justify-content: center;
             }
     }
-    .offers_h1{
-        box-sizing: border-box;
-        padding: 3em 2em 0 2em;
-        margin: 0;
-        @include display-flex(row, center);
-    }
     .home_image{
         height: auto;
         max-height: 50%;
@@ -253,6 +236,7 @@
     .offers{
         height: 100%;
         padding: 0;
+        margin-top: 2em;
     }
     .offers_background{ display: none; }
     .button_holder{
@@ -333,7 +317,7 @@
     }
     .offers{
         height:auto;
-        padding: 0 0 5em 0;
+        padding: 5em 0 5em 0;
         box-sizing: border-box;
     }
     .offers_h1{

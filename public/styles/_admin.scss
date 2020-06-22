@@ -1,0 +1,67 @@
+@import './functions';
+
+.adminowa{
+    min-height: 100%;
+    @include display-flex( column, center );
+    width: 70%;
+    margin: 0 auto;
+        .admin_oferty{
+                & form{
+                     @include display-flex( row, flex-start );
+                     flex-wrap: wrap;
+                     width: 100%;
+                      & label{
+                          margin: 1em 0;
+                          width: 100%;
+                            & p{
+                                width: 100%;
+                            }
+                            & input {
+                                width: 100%;
+                            }
+                            & textarea {
+                                height: 7em;
+                                width: 100%;
+                            }
+                      }
+
+                      .admin_button{
+                          width: 8em;
+                          height: 4em;
+                          margin: auto;
+                      }
+
+                      .photo_inputs{
+                          display: flex;
+                          flex-direction: row;
+                          justify-content: space-around;
+                          width: 100%;
+                      }
+
+                }
+        }
+
+        .deleting_offer{
+            @include display-flex( column, flex-start );
+            align-items: flex-start;
+            width: 100%;
+
+                & form {
+                    @include display-flex( column, flex-start );
+                    align-items: flex-start;
+                    width: 100%;
+                    margin: 1em 0 0 0;
+                        & input {
+                            width: 100%;
+                        }
+                        & label {
+                            width: 100%;
+                        }
+                        & button {
+                            width: 8em;
+                          height: 4em;
+                            margin: 1em auto;
+                        }
+                }
+        }
+}

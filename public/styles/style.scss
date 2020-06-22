@@ -46,16 +46,19 @@ body{
     }
 
     .container{
+        min-height: 100%;
         @import './about';
         @import './kontakt';
         @import './oferta';
         @import './home';
         @import './offer';
         @import './login_page';
-        min-height: 100%;
+        @import './admin';
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
             & .wrapper{
                 @include display-flex(column, center);
-                min-height: 100%;
                 position: relative;
             }
     }
